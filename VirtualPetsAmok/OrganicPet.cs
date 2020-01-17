@@ -4,7 +4,9 @@ using System.Text;
 
 namespace VirtualPetsAmok
 {
-    class OrganicPets
+    public class OrganicPet
     {
+        public string Name { get; set; }
+        public bool InShelter { get; set; }
     }
 }

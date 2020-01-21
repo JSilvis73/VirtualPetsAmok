@@ -13,9 +13,10 @@ namespace VirtualPetsAmok
         {
             this.InShelter = true;
         }
-        public OrganicPet(string name = "Bob")
+        public OrganicPet(string name = "Bob", string petSpecies = "duck")
         {
             Name = name;
+            PetSpecies = petSpecies;
         }
     }
 }

@@ -21,13 +21,32 @@ namespace OrganicPets.Tests
             Assert.Equal("Frank", myOrganicPet.Name);
         }
         [Fact]
-        public void Can_AddPet_To_Shelter()
+        public void Is_Pet_In_Shelter()
         {
             OrganicPet myOrganicPet = new OrganicPet();
 
-            myOrganicPet.InShelter = true;
+            myOrganicPet.InShelter = false;
 
             Assert.False(myOrganicPet.InShelter);
+        }
+        [Fact]
+        public void Can_AddPetToShelter()
+        {
+            OrganicPet myOrganicPet = new OrganicPet();
+
+            myOrganicPet.AddPetToShelter();
+
+            Assert.True(myOrganicPet.InShelter);
+        }
+        [Fact]
+        public void Can_Set_PetSpecies()
+        {
+            OrganicPet myOrganicPet = new OrganicPet();
+
+            myOrganicPet.PetSpecies = "Duck";
+
+            Assert.Equal("Duck", myOrganicPet.PetSpecies);
+
         }
     }
 }

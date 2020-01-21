@@ -42,11 +42,11 @@ namespace OrganicPets.Tests
         public void Can_Set_PetSpecies()
         {
             OrganicPet myOrganicPet = new OrganicPet();
-
-            myOrganicPet.PetSpecies = "Duck";
+            string species = "Duck";
+             
+            myOrganicPet.SetPetSpecies(species);
 
             Assert.Equal("Duck", myOrganicPet.PetSpecies);
-
         }
     }
 }

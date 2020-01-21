@@ -15,8 +15,11 @@ namespace VirtualPetsAmok
         }
         public OrganicPet()
         {
-            Name = "Bob";
-            PetSpecies = "Duck";
+        }
+        public OrganicPet(string name, string species)
+        {
+            Name = name;
+            PetSpecies = species;
         }
         public void SetPetSpecies(string petSpecies)
         {

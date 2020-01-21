@@ -25,5 +25,9 @@ namespace VirtualPetsAmok
         {
             PetSpecies = petSpecies;
         }
+        public void SetPetName(string petName)
+        {
+            Name = petName;
+        }
     }
 }

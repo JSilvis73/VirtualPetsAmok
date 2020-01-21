@@ -27,7 +27,7 @@ namespace VirtualPetsAmok
                             Console.WriteLine("You successfully added your pet to the shelter.");
                             Console.WriteLine("Please enter the name of your animal:");
                             string petName = Console.ReadLine();
-                            newUserPet.Name = petName;
+                            newUserPet.SetPetName(petName);
                             Console.WriteLine($"Your new pet's name is {petName}.");
                             Console.WriteLine("What species would you like your pet to be? (Duck, Dog, Cat, Mouse, etc.)");
                             string userAddedPetSpecies = Console.ReadLine();

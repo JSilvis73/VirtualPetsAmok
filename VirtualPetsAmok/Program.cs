@@ -28,9 +28,10 @@ namespace VirtualPetsAmok
                             Console.WriteLine("Please enter the name of your animal:");
                             string petName = Console.ReadLine();
                             newUserPet.Name = petName;
+                            Console.WriteLine($"Your new pet's name is {petName}.");
                             Console.WriteLine("What species would you like your pet to be? (Duck, Dog, Cat, Mouse, etc.)");
                             string userAddedPetSpecies = Console.ReadLine();
-                            newUserPet.PetSpecies = userAddedPetSpecies;
+                            newUserPet.SetPetSpecies(userAddedPetSpecies);
                             Console.WriteLine($"Your new pet is a {newUserPet.PetSpecies}.");
                             break;
                         }

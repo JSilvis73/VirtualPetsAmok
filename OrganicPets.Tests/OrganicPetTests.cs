@@ -12,13 +12,14 @@ namespace OrganicPets.Tests
             new OrganicPet();
         }
         [Fact]
-        public void Can_Set_petName()
+        public void Can_SetPetName()
         {
             OrganicPet myOrganicPet = new OrganicPet();
+            string petName = "Bob";
 
-            myOrganicPet.Name = "Frank";
+            myOrganicPet.SetPetName(petName);
 
-            Assert.Equal("Frank", myOrganicPet.Name);
+            Assert.Equal("Bob", myOrganicPet.Name);
         }
         [Fact]
         public void Is_Pet_In_Shelter()
@@ -48,7 +49,5 @@ namespace OrganicPets.Tests
 
             Assert.Equal("Duck", myOrganicPet.PetSpecies);
         }
-        [Fact]
-        public void 
     }
 }

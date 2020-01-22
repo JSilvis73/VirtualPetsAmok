@@ -49,5 +49,15 @@ namespace OrganicPets.Tests
 
             Assert.Equal("Duck", myOrganicPet.PetSpecies);
         }
+        [Fact]
+        public void Can_FeedPetDinner()
+        {
+            OrganicPet myOrganicPet = new OrganicPet();
+            myOrganicPet.HungerLevel = 5;
+
+            myOrganicPet.FeedPetDinner();
+
+            Assert.Equal(0, myOrganicPet.HungerLevel);
+        }
     }
 }

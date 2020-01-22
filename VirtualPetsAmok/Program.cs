@@ -15,8 +15,9 @@ namespace VirtualPetsAmok
                 Console.WriteLine("\nMain Menu");
                 Console.WriteLine("1. Add Pet to Shelter");
                 Console.WriteLine("2. Check Name and Species of Pet");
-                Console.WriteLine("3. Exit");
-                Console.Write("\nPlease enter a number 1 through 3: ");
+                Console.WriteLine("3. Check Status of your Pet");
+                Console.WriteLine("7. Exit");
+                Console.Write("\nPlease enter a number 1 through 7: ");
                 string userChoice = Console.ReadLine();
 
                 switch (userChoice)
@@ -49,6 +50,19 @@ namespace VirtualPetsAmok
                             }
                         }
                     case "3":
+                        {
+                            if (newUserPet.Name == null)
+                            {
+                                Console.WriteLine("Please type 1 on the Main Menu and name your pet first.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Your pet's health level is: {newUserPet.HealthLevel} \nYour pet's boredom level is: {newUserPet.BoredomLevel} \nYour pet's hunger level is: {newUserPet.HungerLevel}");
+                            }
+                            break;
+                        }
+                    case "7":
                         {
                             playing = false;
                             Console.WriteLine("Goodbye!");

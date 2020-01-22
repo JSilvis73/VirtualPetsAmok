@@ -9,12 +9,18 @@ namespace VirtualPetsAmok
         public string Name { get; set; }
         public string PetSpecies { get; set; }
         public bool InShelter { get; set; }
+        public int HungerLevel { get; set; }
+        public int BoredomLevel { get; set; }
+        public int HealthLevel { get; set; }
         public void AddPetToShelter()
         {
             this.InShelter = true;
         }
         public OrganicPet()
         {
+            HungerLevel = 3;
+            BoredomLevel = 3;
+            HealthLevel = 10;
         }
         public OrganicPet(string name, string species)
         {
@@ -28,6 +34,11 @@ namespace VirtualPetsAmok
         public void SetPetName(string petName)
         {
             Name = petName;
+        }
+
+        public void FeedPetDinner()
+        {
+            this.HungerLevel = 0;
         }
     }
 }

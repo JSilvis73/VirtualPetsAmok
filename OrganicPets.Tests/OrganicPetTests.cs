@@ -50,7 +50,7 @@ namespace OrganicPets.Tests
             Assert.Equal("Duck", myOrganicPet.PetSpecies);
         }
         [Fact]
-        public void Can_FeedPetDinner()
+        public void Does_FeedPetDinner_Reduce_Hunger_To_Zero()
         {
             OrganicPet myOrganicPet = new OrganicPet();
             myOrganicPet.HungerLevel = 5;
@@ -58,6 +58,20 @@ namespace OrganicPets.Tests
             myOrganicPet.FeedPetDinner();
 
             Assert.Equal(0, myOrganicPet.HungerLevel);
+        }
+        [Fact]
+        public void Does_FeedPetSnack_Reduce_Hunger_By_Two()
+        {
+            OrganicPet myOrganicPet = new OrganicPet();
+            myOrganicPet.HungerLevel = 5;
+
+            myOrganicPet.FeedPetSnack();
+
+            Assert.Equal(3, myOrganicPet.HungerLevel);
+        }
+        public void Can_TakePetToDoctor()
+        {
+
         }
     }
 }

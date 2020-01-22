@@ -40,5 +40,17 @@ namespace VirtualPetsAmok
         {
             this.HungerLevel = 0;
         }
+
+        public void FeedPetSnack()
+        {
+            if (HungerLevel <= 2)
+            {
+                this.HungerLevel = 0;
+            }
+            else
+            {
+                this.HungerLevel -= 2;
+            }
+        }
     }
 }

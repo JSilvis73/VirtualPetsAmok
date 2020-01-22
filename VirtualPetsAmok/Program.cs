@@ -16,6 +16,7 @@ namespace VirtualPetsAmok
                 Console.WriteLine("1. Add Pet to Shelter");
                 Console.WriteLine("2. Check Name and Species of Pet");
                 Console.WriteLine("3. Check Status of your Pet");
+                Console.WriteLine("4. Feed Your Pet");
                 Console.WriteLine("7. Exit");
                 Console.Write("\nPlease enter a number 1 through 7: ");
                 string userChoice = Console.ReadLine();
@@ -61,6 +62,36 @@ namespace VirtualPetsAmok
                                 Console.WriteLine($"Your pet's health level is: {newUserPet.HealthLevel} \nYour pet's boredom level is: {newUserPet.BoredomLevel} \nYour pet's hunger level is: {newUserPet.HungerLevel}");
                             }
                             break;
+                        }
+                    case "4":
+                        {
+                            if (newUserPet.Name == null)
+                            {
+                                Console.WriteLine("Please type 1 on the Main Menu and name your pet first.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Would you like to feed your pet a snack or dinner?");
+                                Console.WriteLine("Press '1' for snack or '2' for dinner.");
+                                string mealChoice = Console.ReadLine();
+
+                                if(mealChoice == "1")
+                                {
+                                    newUserPet.FeedPetSnack();
+                                    Console.WriteLine("You fed your pet a snack. They are satisfied.");
+                                }
+                                else if(mealChoice == "2")
+                                {
+                                    newUserPet.FeedPetDinner();
+                                    Console.WriteLine("You fed your pet dinner. Your pet is now full.");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("You did not select 1 or 2. Returning to main menu.");
+                                }
+                                break;
+                            }
                         }
                     case "7":
                         {

@@ -44,7 +44,7 @@ namespace OrganicPets.Tests
         {
             OrganicPet myOrganicPet = new OrganicPet();
             string species = "Duck";
-             
+
             myOrganicPet.SetPetSpecies(species);
 
             Assert.Equal("Duck", myOrganicPet.PetSpecies);
@@ -81,7 +81,7 @@ namespace OrganicPets.Tests
         }
 
         [Fact]
-        public void Does_PlayWithPet_Decrease_Boredom()
+        public void Does_PlayWithPet_Decrease_Boredomlevel()
         {
             OrganicPet myOrganicPet = new OrganicPet();
             myOrganicPet.BoredomLevel = 5;
@@ -89,6 +89,27 @@ namespace OrganicPets.Tests
             myOrganicPet.PlayWithPet();
 
             Assert.Equal(3, myOrganicPet.BoredomLevel);
+        }
+        [Fact]
+        public void Does_PlayWithPet_Increase_Healthlevel()
+        {
+            OrganicPet myOrganicPet = new OrganicPet();
+            myOrganicPet.HealthLevel = 5;
+
+            myOrganicPet.PlayWithPet();
+
+            Assert.Equal(6, myOrganicPet.HealthLevel);
+        }
+
+        [Fact]
+        public void Does_PlayWithPet_Increase_HungerLevel()
+        {
+            OrganicPet myOrganicPet = new OrganicPet();
+            myOrganicPet.HungerLevel = 5;
+
+            myOrganicPet.PlayWithPet();
+
+            Assert.Equal(7, myOrganicPet.HungerLevel);
         }
     }
 }

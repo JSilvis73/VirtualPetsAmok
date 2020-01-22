@@ -69,9 +69,26 @@ namespace OrganicPets.Tests
 
             Assert.Equal(3, myOrganicPet.HungerLevel);
         }
-        public void Can_TakePetToDoctor()
+        [Fact]
+        public void Does_TakePetToDoctor_Increase_Healthlevel_To_Ten()
         {
+            OrganicPet myOrganicPet = new OrganicPet();
+            myOrganicPet.HealthLevel = 5;
 
+            myOrganicPet.TakePetToDoctor();
+
+            Assert.Equal(10, myOrganicPet.HealthLevel);
+        }
+
+        [Fact]
+        public void Does_PlayWithPet_Decrease_Boredom()
+        {
+            OrganicPet myOrganicPet = new OrganicPet();
+            myOrganicPet.BoredomLevel = 5;
+
+            myOrganicPet.PlayWithPet();
+
+            Assert.Equal(3, myOrganicPet.BoredomLevel);
         }
     }
 }

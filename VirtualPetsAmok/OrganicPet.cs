@@ -52,5 +52,15 @@ namespace VirtualPetsAmok
                 this.HungerLevel -= 2;
             }
         }
+
+        public void TakePetToDoctor()
+        {
+            this.HealthLevel = 10;
+        }
+
+        public void PlayWithPet()
+        {
+
+        }
     }
 }

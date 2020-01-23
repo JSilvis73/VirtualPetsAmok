@@ -9,19 +9,20 @@ namespace VirtualPetsAmok
         static void Main(string[] args)
         {
             OrganicPet newUserPet = new OrganicPet();
+            VirtualPetShelter ourPetShelter = new VirtualPetShelter();
             bool playing = true;
-            List<OrganicPet> shelteredPets = new List<OrganicPet>();
+            
             Console.WriteLine("Welcome to VirtualPets!");
 
             do
             {
                 Console.WriteLine("\nMain Menu");
                 Console.WriteLine("1. Add Pet to Shelter");
-                Console.WriteLine("2. Check Name and Species of Pet");
-                Console.WriteLine("3. Check Status of your Pet");
-                Console.WriteLine("4. Feed Your Pet");
-                Console.WriteLine("5. Take Pet To Doctor");
-                Console.WriteLine("6. Play With Pet");
+                Console.WriteLine("2. Check Info (Name and Species) of Pet");
+                Console.WriteLine("3. Check Status of your Pets");
+                Console.WriteLine("4. Feed Your Pet(s)");
+                Console.WriteLine("5. Take Pet(s) To Doctor");
+                Console.WriteLine("6. Play With Pet(s)");
                 Console.WriteLine("7. Exit");
                 Console.Write("\nPlease enter a number 1 through 7: ");
                 string userChoice = Console.ReadLine();
@@ -63,7 +64,7 @@ namespace VirtualPetsAmok
                             }
                             //newUserPet.AddPetToShelter();
                             Console.WriteLine($"You successfully added {newUserPet.Name} to the shelter!");
-                            shelteredPets.Add(newUserPet);
+                            ourPetShelter.shelteredPets.Add(newUserPet);
                             break;
                         }
                     case "2":
@@ -75,9 +76,9 @@ namespace VirtualPetsAmok
                             }
                             else
                             {
-                                Console.WriteLine($"{newUserPet.Name} is a {newUserPet.PetSpecies}.");
-                                break;
+                                ourPetShelter.ShowShelteredPetsInfo();
                             }
+                            break;
                         }
                     case "3":
                         {
@@ -88,7 +89,8 @@ namespace VirtualPetsAmok
                             }
                             else
                             {
-                                Console.WriteLine($"Your pet's health level is: {newUserPet.HealthLevel} \nYour pet's boredom level is: {newUserPet.BoredomLevel} \nYour pet's hunger level is: {newUserPet.HungerLevel}");
+                                //Console.WriteLine($"Your pet's health level is: {newUserPet.HealthLevel} \nYour pet's boredom level is: {newUserPet.BoredomLevel} \nYour pet's hunger level is: {newUserPet.HungerLevel}");
+                                ourPetShelter.ShowShelteredPetsStatus();
                             }
                             break;
                         }

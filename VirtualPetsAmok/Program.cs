@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace VirtualPetsAmok
 {
@@ -8,6 +10,7 @@ namespace VirtualPetsAmok
         {
             OrganicPet newUserPet = new OrganicPet();
             bool playing = true;
+            List<OrganicPet> shelteredPets = new List<OrganicPet>();
             Console.WriteLine("Welcome to VirtualPets!");
 
             do
@@ -27,8 +30,7 @@ namespace VirtualPetsAmok
                 {
                     case "1":
                         {
-                            newUserPet.AddPetToShelter();
-                            Console.WriteLine("You successfully added your pet to the shelter.");
+                            newUserPet = new OrganicPet();
                             Console.WriteLine("Please enter the name of your animal:");
                             string petName = Console.ReadLine();
                             if (petName == "")
@@ -59,6 +61,9 @@ namespace VirtualPetsAmok
                                     break;
                                 }
                             }
+                            //newUserPet.AddPetToShelter();
+                            Console.WriteLine($"You successfully added {newUserPet.Name} to the shelter!");
+                            shelteredPets.Add(newUserPet);
                             break;
                         }
                     case "2":

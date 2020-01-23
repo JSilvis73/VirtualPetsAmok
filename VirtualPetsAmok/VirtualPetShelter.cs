@@ -19,7 +19,7 @@ namespace VirtualPetsAmok
         {
             foreach(OrganicPet pet in shelteredPets)
             {
-                Console.WriteLine($"Pet Hunger Level: {pet.HungerLevel} Boredom Level: {pet.BoredomLevel} Health Level: {pet.HealthLevel}");
+                Console.WriteLine($"{pet.Name} Hunger Level: {pet.HungerLevel} Boredom Level: {pet.BoredomLevel} Health Level: {pet.HealthLevel}");
             }
         }
             

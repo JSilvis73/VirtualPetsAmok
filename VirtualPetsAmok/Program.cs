@@ -103,19 +103,21 @@ namespace VirtualPetsAmok
                             }
                             else
                             {
-                                Console.WriteLine("Would you like to feed your pet a snack or dinner?");
-                                Console.WriteLine("Press '1' for snack or '2' for dinner.");
+                                //Console.WriteLine("Would you like to feed your pet a snack or dinner?");
+                                //Console.WriteLine("Press '1' for snack or '2' for dinner.");
+                                Console.WriteLine("Press '1' to feed current pet or '2' to feed all pets.");
                                 string mealChoice = Console.ReadLine();
 
                                 if(mealChoice == "1")
                                 {
-                                    newUserPet.FeedPetSnack();
-                                    Console.WriteLine("You fed your pet a snack. They are satisfied.");
+                                    //newUserPet.FeedPetSnack();
+                                    newUserPet.FeedPetDinner();
+                                    Console.WriteLine("You fed your pet dinner. Your pet is now full.");
                                 }
                                 else if(mealChoice == "2")
                                 {
-                                    newUserPet.FeedPetDinner();
-                                    Console.WriteLine("You fed your pet dinner. Your pet is now full.");
+                                    ourPetShelter.FeedAllPetsDinner();
+                                    Console.WriteLine("You fed all of your pets dinner. All pets are full.");
                                 }
                                 else
                                 {
@@ -133,8 +135,22 @@ namespace VirtualPetsAmok
                             }
                             else
                             {
-                                Console.WriteLine("You took your pet to the doctor. It is now healthy.");
-                                newUserPet.TakePetToDoctor();
+                                Console.WriteLine("Press '1' to take the current pet to the doctor or '2' to take all pets to the doctor.");
+                                string doctorChoice = Console.ReadLine();
+                                if (doctorChoice == "1")
+                                {
+                                    Console.WriteLine("You took your pet to the doctor. It is now healthy.");
+                                    newUserPet.TakePetToDoctor();
+                                }
+                                else if (doctorChoice == "2")
+                                {
+                                    ourPetShelter.TakeAllPetsToDoctor();
+                                    Console.WriteLine("You took all your pets to the doctor. All of them are now healthy.");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("You did not select 1 or 2. Returning to main menu.");
+                                }
                             }
                             break;
                         }

@@ -15,7 +15,7 @@ namespace VirtualPetsAmok
         {
             HungerLevel = 3;
             BoredomLevel = 3;
-            HealthLevel = 10;
+            HealthLevel = 7;
         }
         public OrganicPet(string name, string species)
         {
@@ -36,7 +36,7 @@ namespace VirtualPetsAmok
             this.HungerLevel = 0;
         }
 
-        public void FeedPetSnack()
+        /*public void FeedPetSnack()
         {
             if (HungerLevel <= 2)
             {
@@ -46,7 +46,7 @@ namespace VirtualPetsAmok
             {
                 this.HungerLevel -= 2;
             }
-        }
+        }*/
 
         public void TakePetToDoctor()
         {

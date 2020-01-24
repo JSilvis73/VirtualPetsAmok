@@ -163,8 +163,22 @@ namespace VirtualPetsAmok
                             }
                             else
                             {
-                                Console.WriteLine("You have played with your pet! Its status has changed.");
-                                newUserPet.PlayWithPet();
+                                Console.WriteLine("Press '1' to play with your current pet or '2' to play with all of your pets.");
+                                string playChoice = Console.ReadLine();
+                                if (playChoice == "1")
+                                {
+                                    Console.WriteLine("You have played with your pet! Its status has changed.");
+                                    newUserPet.PlayWithPet();
+                                }
+                                else if (playChoice == "2")
+                                {
+                                    ourPetShelter.PlayWithAllPets();
+                                    Console.WriteLine("You played with all of your pets! Their statuses have changed.");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("You did not select 1 or 2. Returning to main menu.");
+                                }
                             }
                             break;
                         }

@@ -15,6 +15,7 @@ namespace VirtualPetsAmok
         {
             HungerLevel = 3;
             BoredomLevel = 3;
+            //leave health at 7 for sake of testing?
             HealthLevel = 7;
         }
         public OrganicPet(string name, string species)

@@ -46,6 +46,39 @@ namespace VirtualPetsAmok
                 pet.HealthLevel = 10;
             }
         }
+        //needs testing
+        public void PlayWithAllPets()
+        {
+            foreach(OrganicPet pet in shelteredPets)
+            {
+                if (pet.BoredomLevel > 2)
+                {
+                    pet.BoredomLevel -= 2;
+                }
+                else
+                {
+                    pet.BoredomLevel = 0;
+                }
+
+                if (pet.HealthLevel <= 9)
+                {
+                    pet.HealthLevel += 1;
+                }
+                else
+                {
+                    pet.HealthLevel = 10;
+                }
+
+                if (pet.HungerLevel < 8)
+                {
+                    pet.HungerLevel += 2;
+                }
+                else
+                {
+                    pet.HungerLevel = 10;
+                }
+            }
+        }
     }
     
 }

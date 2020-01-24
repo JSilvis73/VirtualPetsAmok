@@ -7,6 +7,7 @@ namespace VirtualPetsAmok
     public class VirtualPetShelter
     {
         public List<OrganicPet> shelteredPets = new List<OrganicPet>();
+        
         public void ShowShelteredPetsInfo()
         {
             foreach (OrganicPet pet in shelteredPets)

@@ -21,7 +21,7 @@ namespace OrganicPets.Tests
 
             Assert.Equal("Bob", myOrganicPet.Name);
         }
-        [Fact]
+        /*[Fact]
         public void Is_Pet_In_Shelter()
         {
             OrganicPet myOrganicPet = new OrganicPet();
@@ -38,7 +38,7 @@ namespace OrganicPets.Tests
             myOrganicPet.AddPetToShelter();
 
             Assert.True(myOrganicPet.InShelter);
-        }
+        }*/
         [Fact]
         public void Can_Set_PetSpecies()
         {
@@ -59,7 +59,7 @@ namespace OrganicPets.Tests
 
             Assert.Equal(0, myOrganicPet.HungerLevel);
         }
-        [Fact]
+        /*[Fact]
         public void Does_FeedPetSnack_Reduce_Hunger_By_Two()
         {
             OrganicPet myOrganicPet = new OrganicPet();
@@ -68,7 +68,7 @@ namespace OrganicPets.Tests
             myOrganicPet.FeedPetSnack();
 
             Assert.Equal(3, myOrganicPet.HungerLevel);
-        }
+        }*/
         [Fact]
         public void Does_TakePetToDoctor_Increase_Healthlevel_To_Ten()
         {
@@ -110,6 +110,20 @@ namespace OrganicPets.Tests
             myOrganicPet.PlayWithPet();
 
             Assert.Equal(7, myOrganicPet.HungerLevel);
+        }
+        [Fact]
+        public void Does_FeedAllPetsDinner_Reduce_All_HungerLevels_To_Zero()
+        {
+            VirtualPetShelter petShelter = new VirtualPetShelter();
+            petShelter.shelteredPets.Add(new OrganicPet());
+            petShelter.shelteredPets.Add(new OrganicPet());
+            petShelter.shelteredPets.Add(new OrganicPet());
+
+            petShelter.FeedAllPetsDinner();
+
+            Assert.Equal(0, petShelter.shelteredPets[0].HungerLevel);
+            Assert.Equal(0, petShelter.shelteredPets[1].HungerLevel);
+            Assert.Equal(0, petShelter.shelteredPets[2].HungerLevel);
         }
     }
 }

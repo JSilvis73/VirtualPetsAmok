@@ -23,7 +23,6 @@ namespace VirtualPetsAmok
                 Console.WriteLine($"{pet.Name} Hunger Level: {pet.HungerLevel} Boredom Level: {pet.BoredomLevel} Health Level: {pet.HealthLevel}");
             }
         }
-        //needs testing
         public void FeedAllPetsDinner()
         {
             foreach(OrganicPet pet in shelteredPets)
@@ -39,7 +38,6 @@ namespace VirtualPetsAmok
             }
         }*/
 
-        //needs testing
         public void TakeAllPetsToDoctor()
         {
             foreach(OrganicPet pet in shelteredPets)
@@ -47,7 +45,6 @@ namespace VirtualPetsAmok
                 pet.HealthLevel = 10;
             }
         }
-        //needs testing
         public void PlayWithAllPets()
         {
             foreach(OrganicPet pet in shelteredPets)

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualPetsAmok", "VirtualPetsAmok\VirtualPetsAmok.csproj", "{C205E429-A5F7-46E0-A3CC-E90E98D9AFEA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualPetsAmok.Tests", "OrganicPets.Tests\VirtualPetsAmok.Tests.csproj", "{8E1E7E63-C794-41AE-9D36-A0F479A5C1CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualPetsAmok.Tests", "VirtualPetsAmok.Tests\VirtualPetsAmok.Tests.csproj", "{7F802CCF-1163-4CC5-8C4B-D9AD7571E978}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{C205E429-A5F7-46E0-A3CC-E90E98D9AFEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C205E429-A5F7-46E0-A3CC-E90E98D9AFEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C205E429-A5F7-46E0-A3CC-E90E98D9AFEA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8E1E7E63-C794-41AE-9D36-A0F479A5C1CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E1E7E63-C794-41AE-9D36-A0F479A5C1CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E1E7E63-C794-41AE-9D36-A0F479A5C1CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E1E7E63-C794-41AE-9D36-A0F479A5C1CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F802CCF-1163-4CC5-8C4B-D9AD7571E978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F802CCF-1163-4CC5-8C4B-D9AD7571E978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F802CCF-1163-4CC5-8C4B-D9AD7571E978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F802CCF-1163-4CC5-8C4B-D9AD7571E978}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

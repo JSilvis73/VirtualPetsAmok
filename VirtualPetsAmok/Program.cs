@@ -116,23 +116,23 @@ namespace VirtualPetsAmok
                             {
                                 //Console.WriteLine("Would you like to feed your pet a snack or dinner?");
                                 //Console.WriteLine("Press '1' for snack or '2' for dinner.");
-                                Console.WriteLine("Press '1' to feed current pet or '2' to feed all pets.");
+                                Console.WriteLine($"Press '1' to feed {newUserPet.Name} or '2' to feed all pets. Press any other key to return to the main menu.");
                                 string mealChoice = Console.ReadLine();
 
-                                if(mealChoice == "1")
+                                if (mealChoice == "1")
                                 {
                                     //newUserPet.FeedPetSnack();
                                     newUserPet.FeedPetDinner();
                                     Console.WriteLine($"You fed {newUserPet.Name} dinner. Your pet is now full.");
                                 }
-                                else if(mealChoice == "2")
+                                else if (mealChoice == "2")
                                 {
                                     ourPetShelter.FeedAllPetsDinner();
                                     Console.WriteLine("You fed all of your pets dinner. All pets are full.");
                                 }
                                 else
                                 {
-                                    Console.WriteLine("You did not select 1 or 2. Returning to main menu.");
+                                    Console.WriteLine("Returning to main menu.");
                                 }
                                 break;
                             }
@@ -146,7 +146,7 @@ namespace VirtualPetsAmok
                             }
                             else
                             {
-                                Console.WriteLine("Press '1' to take the current pet to the doctor or '2' to take all pets to the doctor.");
+                                Console.WriteLine($"Press '1' to take {newUserPet.Name} to the doctor or '2' to take all pets to the doctor. Press any other key to return to the main menu.");
                                 string doctorChoice = Console.ReadLine();
                                 if (doctorChoice == "1")
                                 {
@@ -160,7 +160,7 @@ namespace VirtualPetsAmok
                                 }
                                 else
                                 {
-                                    Console.WriteLine("You did not select 1 or 2. Returning to main menu.");
+                                    Console.WriteLine("Returning to main menu.");
                                 }
                             }
                             break;
@@ -174,7 +174,7 @@ namespace VirtualPetsAmok
                             }
                             else
                             {
-                                Console.WriteLine("Press '1' to play with your current pet or '2' to play with all of your pets.");
+                                Console.WriteLine($"Press '1' to play with {newUserPet.Name} or '2' to play with all of your pets. Press any other key to return to the main menu.");
                                 string playChoice = Console.ReadLine();
                                 if (playChoice == "1")
                                 {
@@ -188,7 +188,7 @@ namespace VirtualPetsAmok
                                 }
                                 else
                                 {
-                                    Console.WriteLine("You did not select 1 or 2. Returning to main menu.");
+                                    Console.WriteLine("Returning to main menu.");
                                 }
                             }
                             break;

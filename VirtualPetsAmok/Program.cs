@@ -18,13 +18,14 @@ namespace VirtualPetsAmok
             {
                 Console.WriteLine("\nMain Menu");
                 Console.WriteLine("1. Add Pet to Shelter");
-                Console.WriteLine("2. Check Info (Name and Species) of Pet");
-                Console.WriteLine("3. Check Status of your Pets");
-                Console.WriteLine("4. Feed Your Pet(s)");
-                Console.WriteLine("5. Take Pet(s) To Doctor");
-                Console.WriteLine("6. Play With Pet(s)");
-                Console.WriteLine("7. Exit");
-                Console.Write("\nPlease enter a number 1 through 7: ");
+                Console.WriteLine("2. Select Pet");
+                Console.WriteLine("3. Check Info (Name and Species) of Pet");
+                Console.WriteLine("4. Check Status of your Pets");
+                Console.WriteLine("5. Feed Your Pet(s)");
+                Console.WriteLine("6. Take Pet(s) To Doctor");
+                Console.WriteLine("7. Play With Pet(s)");
+                Console.WriteLine("8. Exit");
+                Console.Write("\nPlease enter a number 1 through 8: ");
                 string userChoice = Console.ReadLine();
 
                 switch (userChoice)
@@ -69,6 +70,16 @@ namespace VirtualPetsAmok
                         }
                     case "2":
                         {
+                            
+                            ourPetShelter.ShowShelteredPetsInfo();
+                            Console.WriteLine("Please select the pet number that you would like to interact with.");
+                            int selectPet = Convert.ToInt32(Console.ReadLine());
+                            newUserPet = ourPetShelter.ChoosePetFromList(selectPet);
+                            Console.WriteLine($"You've selected {newUserPet.Name}.");
+                            break;
+                        }
+                    case "3":
+                        {
                             if (newUserPet.Name == null)
                             {
                                 Console.WriteLine("Please type 1 on the Main Menu and name your pet first.");
@@ -80,7 +91,7 @@ namespace VirtualPetsAmok
                             }
                             break;
                         }
-                    case "3":
+                    case "4":
                         {
                             if (newUserPet.Name == null)
                             {
@@ -94,7 +105,7 @@ namespace VirtualPetsAmok
                             }
                             break;
                         }
-                    case "4":
+                    case "5":
                         {
                             if (newUserPet.Name == null)
                             {
@@ -112,7 +123,7 @@ namespace VirtualPetsAmok
                                 {
                                     //newUserPet.FeedPetSnack();
                                     newUserPet.FeedPetDinner();
-                                    Console.WriteLine("You fed your pet dinner. Your pet is now full.");
+                                    Console.WriteLine($"You fed {newUserPet.Name} dinner. Your pet is now full.");
                                 }
                                 else if(mealChoice == "2")
                                 {
@@ -126,7 +137,7 @@ namespace VirtualPetsAmok
                                 break;
                             }
                         }
-                    case "5":
+                    case "6":
                         {
                             if (newUserPet.Name == null)
                             {
@@ -139,7 +150,7 @@ namespace VirtualPetsAmok
                                 string doctorChoice = Console.ReadLine();
                                 if (doctorChoice == "1")
                                 {
-                                    Console.WriteLine("You took your pet to the doctor. It is now healthy.");
+                                    Console.WriteLine($"You took {newUserPet.Name} to the doctor. It is now healthy.");
                                     newUserPet.TakePetToDoctor();
                                 }
                                 else if (doctorChoice == "2")
@@ -154,7 +165,7 @@ namespace VirtualPetsAmok
                             }
                             break;
                         }
-                    case "6":
+                    case "7":
                         {
                             if (newUserPet.Name == null)
                             {
@@ -167,7 +178,7 @@ namespace VirtualPetsAmok
                                 string playChoice = Console.ReadLine();
                                 if (playChoice == "1")
                                 {
-                                    Console.WriteLine("You have played with your pet! Its status has changed.");
+                                    Console.WriteLine($"You have played with {newUserPet.Name}! Its status has changed.");
                                     newUserPet.PlayWithPet();
                                 }
                                 else if (playChoice == "2")
@@ -182,7 +193,7 @@ namespace VirtualPetsAmok
                             }
                             break;
                         }
-                    case "7":
+                    case "8":
                         {
                             playing = false;
                             Console.WriteLine("Goodbye!");

@@ -10,11 +10,19 @@ namespace VirtualPetsAmok
         
         public void ShowShelteredPetsInfo()
         {
+            int count = 1;
             foreach (OrganicPet pet in shelteredPets)
             {
-                Console.WriteLine($"Pet name: {pet.Name}  Species: {pet.PetSpecies}");
+                Console.WriteLine($"{count}. Pet name: {pet.Name}  Species: {pet.PetSpecies}");
+                count++;
             }
         }
+        public OrganicPet ChoosePetFromList(int input)
+        {
+            int petNumber = (input - 1);
+            return shelteredPets[petNumber];
+        }
+
 
         public void ShowShelteredPetsStatus()
         {

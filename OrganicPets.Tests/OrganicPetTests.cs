@@ -111,6 +111,16 @@ namespace OrganicPets.Tests
 
             Assert.Equal(7, myOrganicPet.HungerLevel);
         }
+        /*[Fact]
+        public void Does_ChoosePetFromList_Return_Correct_Index()
+        {
+            VirtualPetShelter petShelter = new VirtualPetShelter();
+            int userInput = 2;
+
+            petShelter.ChoosePetFromList(userInput);
+
+            Assert.Equal(1, userInput);
+        }*/
         [Fact]
         public void Does_FeedAllPetsDinner_Reduce_All_HungerLevels_To_Zero()
         {

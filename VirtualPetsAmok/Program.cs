@@ -33,7 +33,8 @@ namespace VirtualPetsAmok
                     case "1":
                         {
                             newUserPet = new OrganicPet();
-                            Console.WriteLine("Please enter the name of your animal:");
+                            ourPetShelter.AddPetToShelter(newUserPet);
+                            /*Console.WriteLine("Please enter the name of your animal:");
                             string petName = Console.ReadLine();
                             if (petName == "")
                             {
@@ -63,8 +64,7 @@ namespace VirtualPetsAmok
                                     break;
                                 }
                             }
-                            //newUserPet.AddPetToShelter();
-                            Console.WriteLine($"You successfully added {newUserPet.Name} to the shelter!");
+                            Console.WriteLine($"You successfully added {newUserPet.Name} to the shelter!");*/
                             ourPetShelter.shelteredPets.Add(newUserPet);
                             break;
                         }

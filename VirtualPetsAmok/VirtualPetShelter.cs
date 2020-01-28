@@ -72,7 +72,6 @@ namespace VirtualPetsAmok
                 if (petName == "")
                 {
                     Console.WriteLine("You did not enter a valid name. Empty fields are not acceptable.");
-                    break;
                 }
                 else
                 {

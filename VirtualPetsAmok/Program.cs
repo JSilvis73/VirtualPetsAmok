@@ -12,7 +12,9 @@ namespace VirtualPetsAmok
             VirtualPetShelter ourPetShelter = new VirtualPetShelter();
             bool playing = true;
             
-            Console.WriteLine("Welcome to VirtualPets!");
+            Console.WriteLine("Welcome to VirtualPets! Let's get started by adding your first pet to the shelter.");
+            ourPetShelter.AddPetToShelter(newUserPet);
+            ourPetShelter.shelteredPets.Add(newUserPet);
 
             do
             {
@@ -34,37 +36,6 @@ namespace VirtualPetsAmok
                         {
                             newUserPet = new OrganicPet();
                             ourPetShelter.AddPetToShelter(newUserPet);
-                            /*Console.WriteLine("Please enter the name of your animal:");
-                            string petName = Console.ReadLine();
-                            if (petName == "")
-                            {
-                                Console.WriteLine("You did not enter a valid name. Empty fields are not acceptable.");
-                                break;
-                            }
-                            else
-                            {
-                                newUserPet.SetPetName(petName);
-                                Console.WriteLine($"Your new pet's name is {petName}.");
-
-                            }
-                            bool giveValidSpecies = false;
-                            while (giveValidSpecies == false)
-                            {
-                                Console.WriteLine("What species would you like your pet to be? (Duck, Dog, Cat, Mouse, etc.)");
-                                string userAddedPetSpecies = Console.ReadLine();
-                                if (userAddedPetSpecies == "")
-                                {
-                                    Console.WriteLine("You did not enter a valid species. Empty fields are not acceptable.");
-                                }
-                                else
-                                {
-                                    newUserPet.SetPetSpecies(userAddedPetSpecies);
-                                    Console.WriteLine($"Your new pet is a {newUserPet.PetSpecies}.");
-                                    giveValidSpecies = true;
-                                    break;
-                                }
-                            }
-                            Console.WriteLine($"You successfully added {newUserPet.Name} to the shelter!");*/
                             ourPetShelter.shelteredPets.Add(newUserPet);
                             break;
                         }

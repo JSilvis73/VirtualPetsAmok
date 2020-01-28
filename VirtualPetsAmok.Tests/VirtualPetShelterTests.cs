@@ -82,5 +82,14 @@ namespace VirtualPetsAmok.Tests
             Assert.Equal(1, petShelter.shelteredPets[1].BoredomLevel);
             Assert.Equal(1, petShelter.shelteredPets[2].BoredomLevel);
         }
+        /*[Fact]
+        public void Does_AddPetToShelter_Change_Name()
+        {
+            VirtualPetShelter petShelter = new VirtualPetShelter();
+
+            petShelter.AddPetToShelter();
+
+            Assert.Equal()
+        }*/
     }
 }

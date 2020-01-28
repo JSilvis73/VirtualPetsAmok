@@ -11,7 +11,7 @@ namespace VirtualPetsAmok
             OrganicPet newUserPet = new OrganicPet();
             VirtualPetShelter ourPetShelter = new VirtualPetShelter();
             bool playing = true;
-            
+
             Console.WriteLine("Welcome to VirtualPets! Let's get started by adding your first pet to the shelter.");
             ourPetShelter.AddPetToShelter(newUserPet);
             ourPetShelter.shelteredPets.Add(newUserPet);
@@ -41,7 +41,7 @@ namespace VirtualPetsAmok
                         }
                     case "2":
                         {
-                            
+
                             ourPetShelter.ShowShelteredPetsInfo();
                             Console.WriteLine("Please select the pet number that you would like to interact with.");
                             int selectPet = Convert.ToInt32(Console.ReadLine());
@@ -51,116 +51,76 @@ namespace VirtualPetsAmok
                         }
                     case "3":
                         {
-                            if (newUserPet.Name == null)
-                            {
-                                Console.WriteLine("Please type 1 on the Main Menu and name your pet first.");
-                                break;
-                            }
-                            else
-                            {
-                                ourPetShelter.ShowShelteredPetsInfo();
-                            }
+                            ourPetShelter.ShowShelteredPetsInfo();
                             break;
                         }
                     case "4":
                         {
-                            if (newUserPet.Name == null)
-                            {
-                                Console.WriteLine("Please type 1 on the Main Menu and name your pet first.");
-                                break;
-                            }
-                            else
-                            {
-                                //Console.WriteLine($"Your pet's health level is: {newUserPet.HealthLevel} \nYour pet's boredom level is: {newUserPet.BoredomLevel} \nYour pet's hunger level is: {newUserPet.HungerLevel}");
-                                ourPetShelter.ShowShelteredPetsStatus();
-                            }
+                            ourPetShelter.ShowShelteredPetsStatus();
+
                             break;
                         }
                     case "5":
                         {
-                            if (newUserPet.Name == null)
+                            //Console.WriteLine("Would you like to feed your pet a snack or dinner?");
+                            //Console.WriteLine("Press '1' for snack or '2' for dinner.");
+                            Console.WriteLine($"Press '1' to feed {newUserPet.Name} or '2' to feed all pets. Press any other key to return to the main menu.");
+                            string mealChoice = Console.ReadLine();
+
+                            if (mealChoice == "1")
                             {
-                                Console.WriteLine("Please type 1 on the Main Menu and name your pet first.");
-                                break;
+                                //newUserPet.FeedPetSnack();
+                                newUserPet.FeedPetDinner();
+                                Console.WriteLine($"You fed {newUserPet.Name} dinner. Your pet is now full.");
+                            }
+                            else if (mealChoice == "2")
+                            {
+                                ourPetShelter.FeedAllPetsDinner();
+                                Console.WriteLine("You fed all of your pets dinner. All pets are full.");
                             }
                             else
                             {
-                                //Console.WriteLine("Would you like to feed your pet a snack or dinner?");
-                                //Console.WriteLine("Press '1' for snack or '2' for dinner.");
-                                Console.WriteLine($"Press '1' to feed {newUserPet.Name} or '2' to feed all pets. Press any other key to return to the main menu.");
-                                string mealChoice = Console.ReadLine();
-
-                                if (mealChoice == "1")
-                                {
-                                    //newUserPet.FeedPetSnack();
-                                    newUserPet.FeedPetDinner();
-                                    Console.WriteLine($"You fed {newUserPet.Name} dinner. Your pet is now full.");
-                                }
-                                else if (mealChoice == "2")
-                                {
-                                    ourPetShelter.FeedAllPetsDinner();
-                                    Console.WriteLine("You fed all of your pets dinner. All pets are full.");
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Returning to main menu.");
-                                }
-                                break;
+                                Console.WriteLine("Returning to main menu.");
                             }
+                            break;
                         }
                     case "6":
                         {
-                            if (newUserPet.Name == null)
+                            Console.WriteLine($"Press '1' to take {newUserPet.Name} to the doctor or '2' to take all pets to the doctor. Press any other key to return to the main menu.");
+                            string doctorChoice = Console.ReadLine();
+                            if (doctorChoice == "1")
                             {
-                                Console.WriteLine("Please type 1 on the Main Menu and name your pet first.");
-                                break;
+                                Console.WriteLine($"You took {newUserPet.Name} to the doctor. It is now healthy.");
+                                newUserPet.TakePetToDoctor();
+                            }
+                            else if (doctorChoice == "2")
+                            {
+                                ourPetShelter.TakeAllPetsToDoctor();
+                                Console.WriteLine("You took all your pets to the doctor. All of them are now healthy.");
                             }
                             else
                             {
-                                Console.WriteLine($"Press '1' to take {newUserPet.Name} to the doctor or '2' to take all pets to the doctor. Press any other key to return to the main menu.");
-                                string doctorChoice = Console.ReadLine();
-                                if (doctorChoice == "1")
-                                {
-                                    Console.WriteLine($"You took {newUserPet.Name} to the doctor. It is now healthy.");
-                                    newUserPet.TakePetToDoctor();
-                                }
-                                else if (doctorChoice == "2")
-                                {
-                                    ourPetShelter.TakeAllPetsToDoctor();
-                                    Console.WriteLine("You took all your pets to the doctor. All of them are now healthy.");
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Returning to main menu.");
-                                }
+                                Console.WriteLine("Returning to main menu.");
                             }
                             break;
                         }
                     case "7":
                         {
-                            if (newUserPet.Name == null)
+                            Console.WriteLine($"Press '1' to play with {newUserPet.Name} or '2' to play with all of your pets. Press any other key to return to the main menu.");
+                            string playChoice = Console.ReadLine();
+                            if (playChoice == "1")
                             {
-                                Console.WriteLine("Please type 1 on the Main Menu and name your pet first.");
-                                break;
+                                Console.WriteLine($"You have played with {newUserPet.Name}! Its status has changed.");
+                                newUserPet.PlayWithPet();
+                            }
+                            else if (playChoice == "2")
+                            {
+                                ourPetShelter.PlayWithAllPets();
+                                Console.WriteLine("You played with all of your pets! Their statuses have changed.");
                             }
                             else
                             {
-                                Console.WriteLine($"Press '1' to play with {newUserPet.Name} or '2' to play with all of your pets. Press any other key to return to the main menu.");
-                                string playChoice = Console.ReadLine();
-                                if (playChoice == "1")
-                                {
-                                    Console.WriteLine($"You have played with {newUserPet.Name}! Its status has changed.");
-                                    newUserPet.PlayWithPet();
-                                }
-                                else if (playChoice == "2")
-                                {
-                                    ourPetShelter.PlayWithAllPets();
-                                    Console.WriteLine("You played with all of your pets! Their statuses have changed.");
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Returning to main menu.");
-                                }
+                                Console.WriteLine("Returning to main menu.");
                             }
                             break;
                         }

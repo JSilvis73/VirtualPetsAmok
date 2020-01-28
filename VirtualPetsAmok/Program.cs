@@ -13,8 +13,9 @@ namespace VirtualPetsAmok
             bool playing = true;
 
             Console.WriteLine("Welcome to VirtualPets! Let's get started by adding your first pet to the shelter.");
+            newUserPet.CreatePet();
             ourPetShelter.AddPetToShelter(newUserPet);
-            ourPetShelter.shelteredPets.Add(newUserPet);
+            
 
             do
             {
@@ -35,14 +36,15 @@ namespace VirtualPetsAmok
                     case "1":
                         {
                             newUserPet = new OrganicPet();
+                            newUserPet.CreatePet();
                             ourPetShelter.AddPetToShelter(newUserPet);
-                            ourPetShelter.shelteredPets.Add(newUserPet);
                             break;
                         }
                     case "2":
                         {
 
                             ourPetShelter.ShowShelteredPetsInfo();
+                            //move to ChoosePetFromList
                             Console.WriteLine("Please select the pet number that you would like to interact with.");
                             int selectPet = Convert.ToInt32(Console.ReadLine());
                             newUserPet = ourPetShelter.ChoosePetFromList(selectPet);
@@ -110,8 +112,8 @@ namespace VirtualPetsAmok
                             string playChoice = Console.ReadLine();
                             if (playChoice == "1")
                             {
-                                Console.WriteLine($"You have played with {newUserPet.Name}! Its status has changed.");
                                 newUserPet.PlayWithPet();
+                                Console.WriteLine($"You have played with {newUserPet.Name}! Its status has changed.");
                             }
                             else if (playChoice == "2")
                             {

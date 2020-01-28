@@ -11,6 +11,7 @@ namespace OrganicPets.Tests
         {
             new OrganicPet();
         }
+
         [Fact]
         public void Can_SetPetName()
         {
@@ -21,24 +22,7 @@ namespace OrganicPets.Tests
 
             Assert.Equal("Bob", myOrganicPet.Name);
         }
-        /*[Fact]
-        public void Is_Pet_In_Shelter()
-        {
-            OrganicPet myOrganicPet = new OrganicPet();
 
-            myOrganicPet.InShelter = false;
-
-            Assert.False(myOrganicPet.InShelter);
-        }
-        [Fact]
-        public void Can_AddPetToShelter()
-        {
-            OrganicPet myOrganicPet = new OrganicPet();
-
-            myOrganicPet.AddPetToShelter();
-
-            Assert.True(myOrganicPet.InShelter);
-        }*/
         [Fact]
         public void Can_Set_PetSpecies()
         {
@@ -49,6 +33,7 @@ namespace OrganicPets.Tests
 
             Assert.Equal("Duck", myOrganicPet.PetSpecies);
         }
+
         [Fact]
         public void Does_FeedPetDinner_Reduce_Hunger_To_Zero()
         {
@@ -59,16 +44,7 @@ namespace OrganicPets.Tests
 
             Assert.Equal(0, myOrganicPet.HungerLevel);
         }
-        /*[Fact]
-        public void Does_FeedPetSnack_Reduce_Hunger_By_Two()
-        {
-            OrganicPet myOrganicPet = new OrganicPet();
-            myOrganicPet.HungerLevel = 5;
 
-            myOrganicPet.FeedPetSnack();
-
-            Assert.Equal(3, myOrganicPet.HungerLevel);
-        }*/
         [Fact]
         public void Does_TakePetToDoctor_Increase_Healthlevel_To_Ten()
         {
@@ -90,6 +66,7 @@ namespace OrganicPets.Tests
 
             Assert.Equal(3, myOrganicPet.BoredomLevel);
         }
+
         [Fact]
         public void Does_PlayWithPet_Increase_Healthlevel()
         {
@@ -111,16 +88,5 @@ namespace OrganicPets.Tests
 
             Assert.Equal(7, myOrganicPet.HungerLevel);
         }
-        /*[Fact]
-        public void Does_ChoosePetFromList_Return_Correct_Index()
-        {
-            VirtualPetShelter petShelter = new VirtualPetShelter();
-            int userInput = 2;
-
-            petShelter.ChoosePetFromList(userInput);
-
-            Assert.Equal(1, userInput);
-        }*/
-        
     }
 }

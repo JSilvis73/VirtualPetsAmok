@@ -82,14 +82,20 @@ namespace VirtualPetsAmok.Tests
             Assert.Equal(1, petShelter.shelteredPets[1].BoredomLevel);
             Assert.Equal(1, petShelter.shelteredPets[2].BoredomLevel);
         }
-        /*[Fact]
-        public void Does_AddPetToShelter_Change_Name()
+
+        [Fact]
+        public void Does_ChoosePetFromList_Return_Correct_Index()
         {
             VirtualPetShelter petShelter = new VirtualPetShelter();
+            petShelter.shelteredPets.Add(new OrganicPet());
+            petShelter.shelteredPets.Add(new OrganicPet());
+            petShelter.shelteredPets.Add(new OrganicPet());
+            int userInput = 2;
+            int index = userInput - 1;
 
-            petShelter.AddPetToShelter();
+            OrganicPet selectedPet = petShelter.ChoosePetFromList(userInput);
 
-            Assert.Equal()
-        }*/
+            Assert.Equal(index, petShelter.shelteredPets.IndexOf(selectedPet));
+        }
     }
 }

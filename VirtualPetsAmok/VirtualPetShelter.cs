@@ -64,41 +64,9 @@ namespace VirtualPetsAmok
         }
         public void AddPetToShelter(OrganicPet pet)
         {
-            bool giveValidPetName = false;
-            while (giveValidPetName == false)
-            {
-                Console.WriteLine("Please enter the name of your animal:");
-                string petName = Console.ReadLine();
-                if (petName == "")
-                {
-                    Console.WriteLine("You did not enter a valid name. Empty fields are not acceptable.");
-                }
-                else
-                {
-                    pet.SetPetName(petName);
-                    Console.WriteLine($"Your new pet's name is {petName}.");
-                    giveValidPetName = true;
-                    break;
-                }
-            }
-            bool giveValidSpecies = false;
-            while (giveValidSpecies == false)
-            {
-                Console.WriteLine("What species would you like your pet to be? (Duck, Dog, Cat, Mouse, etc.)");
-                string userAddedPetSpecies = Console.ReadLine();
-                if (userAddedPetSpecies == "")
-                {
-                    Console.WriteLine("You did not enter a valid species. Empty fields are not acceptable.");
-                }
-                else
-                {
-                    pet.SetPetSpecies(userAddedPetSpecies);
-                    Console.WriteLine($"Your new pet is a {pet.PetSpecies}.");
-                    giveValidSpecies = true;
-                    break;
-                }
-            }
+            shelteredPets.Add(pet);
             Console.WriteLine($"You successfully added {pet.Name} to the shelter!");
+            //move to OrganicPet.cs
         }
     }
     

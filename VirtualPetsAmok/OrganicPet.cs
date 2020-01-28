@@ -18,15 +18,56 @@ namespace VirtualPetsAmok
             //leave health at 7 for sake of testing?
             HealthLevel = 7;
         }
+
         public OrganicPet(string name, string species)
         {
             Name = name;
             PetSpecies = species;
         }
+
+        public void CreatePet()
+        {
+            bool giveValidPetName = false;
+            while (giveValidPetName == false)
+            {
+                Console.WriteLine("Please enter the name of your animal:");
+                string petName = Console.ReadLine();
+                if (petName == "")
+                {
+                    Console.WriteLine("You did not enter a valid name. Empty fields are not acceptable.");
+                }
+                else
+                {
+                    SetPetName(petName);
+                    Console.WriteLine($"Your new pet's name is {petName}.");
+                    giveValidPetName = true;
+                    break;
+                }
+            }
+            bool giveValidSpecies = false;
+            while (giveValidSpecies == false)
+            {
+                Console.WriteLine("What species would you like your pet to be? (Duck, Dog, Cat, Mouse, etc.)");
+                string userAddedPetSpecies = Console.ReadLine();
+                if (userAddedPetSpecies == "")
+                {
+                    Console.WriteLine("You did not enter a valid species. Empty fields are not acceptable.");
+                }
+                else
+                {
+                    SetPetSpecies(userAddedPetSpecies);
+                    Console.WriteLine($"Your new pet is a {PetSpecies}.");
+                    giveValidSpecies = true;
+                    break;
+                }
+            }
+        }
+
         public void SetPetSpecies(string petSpecies)
         {
             PetSpecies = petSpecies;
         }
+
         public void SetPetName(string petName)
         {
             Name = petName;

@@ -25,7 +25,7 @@ namespace VirtualPetsAmok
             PetSpecies = species;
         }
 
-        public void CreatePet()
+        public virtual void CreatePet()
         {
             bool giveValidPetName = false;
             while (giveValidPetName == false)

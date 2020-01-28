@@ -17,10 +17,13 @@ namespace VirtualPetsAmok
                 count++;
             }
         }
-        public OrganicPet ChoosePetFromList(int input)
+        public OrganicPet ChoosePetFromList()
         {
-            int petNumber = (input - 1);
+            Console.WriteLine("Please select the pet number that you would like to interact with.");
+            int selectPet = Convert.ToInt32(Console.ReadLine());
+            int petNumber = (selectPet - 1);
             return shelteredPets[petNumber];
+
         }
 
 

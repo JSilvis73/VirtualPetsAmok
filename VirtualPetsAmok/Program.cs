@@ -45,10 +45,8 @@ namespace VirtualPetsAmok
 
                             ourPetShelter.ShowShelteredPetsInfo();
                             //move to ChoosePetFromList
-                            Console.WriteLine("Please select the pet number that you would like to interact with.");
-                            int selectPet = Convert.ToInt32(Console.ReadLine());
-                            newUserPet = ourPetShelter.ChoosePetFromList(selectPet);
-                            Console.WriteLine($"You've selected {newUserPet.Name}.");
+                            newUserPet = ourPetShelter.ChoosePetFromList();
+                            Console.WriteLine($"You've selected {newUserPet.Name}. Returning to Main Menu.");
                             break;
                         }
                     case "3":

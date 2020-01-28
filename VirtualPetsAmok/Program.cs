@@ -8,7 +8,7 @@ namespace VirtualPetsAmok
     {
         static void Main(string[] args)
         {
-            OrganicPet newUserPet = new OrganicPet();
+            VirtualPet newUserPet = new VirtualPet();
             VirtualPetShelter ourPetShelter = new VirtualPetShelter();
             bool playing = true;
 
@@ -35,7 +35,7 @@ namespace VirtualPetsAmok
                 {
                     case "1":
                         {
-                            newUserPet = new OrganicPet();
+                            newUserPet = new VirtualPet();
                             newUserPet.CreatePet();
                             ourPetShelter.AddPetToShelter(newUserPet);
                             break;

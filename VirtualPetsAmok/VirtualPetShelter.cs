@@ -6,18 +6,18 @@ namespace VirtualPetsAmok
 {
     public class VirtualPetShelter
     {
-        public List<OrganicPet> shelteredPets = new List<OrganicPet>();
+        public List<VirtualPet> shelteredPets = new List<VirtualPet>();
 
         public void ShowShelteredPetsInfo()
         {
             int count = 1;
-            foreach (OrganicPet pet in shelteredPets)
+            foreach (VirtualPet pet in shelteredPets)
             {
                 Console.WriteLine($"{count}. Pet name: {pet.Name}  Species: {pet.PetSpecies}");
                 count++;
             }
         }
-        public OrganicPet ChoosePetFromList()
+        public VirtualPet ChoosePetFromList()
         {
             Console.WriteLine("Please select the pet number that you would like to interact with.");
             int selectPet = Convert.ToInt32(Console.ReadLine());
@@ -30,7 +30,7 @@ namespace VirtualPetsAmok
         public void ShowShelteredPetsStatus()
         {
             int count = 1;
-            foreach (OrganicPet pet in shelteredPets)
+            foreach (VirtualPet pet in shelteredPets)
             {
                 Console.WriteLine($"{count}. {pet.Name}: Hunger Level: {pet.HungerLevel} Boredom Level: {pet.BoredomLevel} Health Level: {pet.HealthLevel}");
                 count++;
@@ -38,7 +38,7 @@ namespace VirtualPetsAmok
         }
         public void FeedAllPetsDinner()
         {
-            foreach (OrganicPet pet in shelteredPets)
+            foreach (VirtualPet pet in shelteredPets)
             {
                 pet.FeedPetDinner();
             }
@@ -53,19 +53,19 @@ namespace VirtualPetsAmok
 
         public void TakeAllPetsToDoctor()
         {
-            foreach (OrganicPet pet in shelteredPets)
+            foreach (VirtualPet pet in shelteredPets)
             {
                 pet.TakePetToDoctor();
             }
         }
         public void PlayWithAllPets()
         {
-            foreach (OrganicPet pet in shelteredPets)
+            foreach (VirtualPet pet in shelteredPets)
             {
                 pet.PlayWithPet();
             }
         }
-        public void AddPetToShelter(OrganicPet pet)
+        public void AddPetToShelter(VirtualPet pet)
         {
             shelteredPets.Add(pet);
             Console.WriteLine($"You successfully added {pet.Name} to the shelter!");

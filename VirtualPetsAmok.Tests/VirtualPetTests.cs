@@ -2,20 +2,20 @@ using System;
 using VirtualPetsAmok;
 using Xunit;
 
-namespace OrganicPets.Tests
+namespace VirtualPet.Tests
 {
-    public class OrganicPetTests
+    public class VirtualPetTests
     {
         [Fact]
         public void Can_Create_Pet_Instance()
         {
-            new OrganicPet();
+            new VirtualPet();
         }
 
         [Fact]
         public void Can_SetPetName()
         {
-            OrganicPet myOrganicPet = new OrganicPet();
+            VirtualPet myOrganicPet = new VirtualPet();
             string petName = "Bob";
 
             myOrganicPet.SetPetName(petName);
@@ -26,7 +26,7 @@ namespace OrganicPets.Tests
         [Fact]
         public void Can_Set_PetSpecies()
         {
-            OrganicPet myOrganicPet = new OrganicPet();
+            VirtualPet myOrganicPet = new VirtualPet();
             string species = "Duck";
 
             myOrganicPet.SetPetSpecies(species);
@@ -37,7 +37,7 @@ namespace OrganicPets.Tests
         [Fact]
         public void Does_FeedPetDinner_Reduce_Hunger_To_Zero()
         {
-            OrganicPet myOrganicPet = new OrganicPet();
+            VirtualPet myOrganicPet = new VirtualPet();
             myOrganicPet.HungerLevel = 5;
 
             myOrganicPet.FeedPetDinner();
@@ -48,7 +48,7 @@ namespace OrganicPets.Tests
         [Fact]
         public void Does_TakePetToDoctor_Increase_Healthlevel_To_Ten()
         {
-            OrganicPet myOrganicPet = new OrganicPet();
+            VirtualPet myOrganicPet = new VirtualPet();
             myOrganicPet.HealthLevel = 5;
 
             myOrganicPet.TakePetToDoctor();
@@ -59,7 +59,7 @@ namespace OrganicPets.Tests
         [Fact]
         public void Does_PlayWithPet_Decrease_Boredomlevel()
         {
-            OrganicPet myOrganicPet = new OrganicPet();
+            VirtualPet myOrganicPet = new VirtualPet();
             myOrganicPet.BoredomLevel = 5;
 
             myOrganicPet.PlayWithPet();
@@ -70,7 +70,7 @@ namespace OrganicPets.Tests
         [Fact]
         public void Does_PlayWithPet_Increase_Healthlevel()
         {
-            OrganicPet myOrganicPet = new OrganicPet();
+            VirtualPet myOrganicPet = new VirtualPet();
             myOrganicPet.HealthLevel = 5;
 
             myOrganicPet.PlayWithPet();
@@ -81,7 +81,7 @@ namespace OrganicPets.Tests
         [Fact]
         public void Does_PlayWithPet_Increase_HungerLevel()
         {
-            OrganicPet myOrganicPet = new OrganicPet();
+            VirtualPet myOrganicPet = new VirtualPet();
             myOrganicPet.HungerLevel = 5;
 
             myOrganicPet.PlayWithPet();

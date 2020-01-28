@@ -26,16 +26,18 @@ namespace VirtualPetsAmok
 
         public void ShowShelteredPetsStatus()
         {
+            int count = 1;
             foreach(OrganicPet pet in shelteredPets)
             {
-                Console.WriteLine($"{pet.Name} Hunger Level: {pet.HungerLevel} Boredom Level: {pet.BoredomLevel} Health Level: {pet.HealthLevel}");
+                Console.WriteLine($"{count}. {pet.Name}: Hunger Level: {pet.HungerLevel} Boredom Level: {pet.BoredomLevel} Health Level: {pet.HealthLevel}");
+                count++;
             }
         }
         public void FeedAllPetsDinner()
         {
             foreach(OrganicPet pet in shelteredPets)
             {
-                pet.HungerLevel = 0;
+                pet.FeedPetDinner();
             }
         }
         /*public void FeedAllPetsSnack()
@@ -50,39 +52,14 @@ namespace VirtualPetsAmok
         {
             foreach(OrganicPet pet in shelteredPets)
             {
-                pet.HealthLevel = 10;
+                pet.TakePetToDoctor();
             }
         }
         public void PlayWithAllPets()
         {
             foreach(OrganicPet pet in shelteredPets)
             {
-                if (pet.BoredomLevel > 2)
-                {
-                    pet.BoredomLevel -= 2;
-                }
-                else
-                {
-                    pet.BoredomLevel = 0;
-                }
-
-                if (pet.HealthLevel <= 9)
-                {
-                    pet.HealthLevel += 1;
-                }
-                else
-                {
-                    pet.HealthLevel = 10;
-                }
-
-                if (pet.HungerLevel < 8)
-                {
-                    pet.HungerLevel += 2;
-                }
-                else
-                {
-                    pet.HungerLevel = 10;
-                }
+                pet.PlayWithPet();
             }
         }
     }

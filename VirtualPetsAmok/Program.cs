@@ -45,41 +45,82 @@ namespace VirtualPetsAmok
                 {
                     case "1":
                         {
-                            newOrganicPet = new OrganicPet();
-                            newOrganicPet.CreatePet();
-                            ourPetShelter.AddOrganicPetToShelter(newOrganicPet);
+                            Console.WriteLine("What is your pet?: 1.Organic 2.Robotic");
+                            int newUserInput = Convert.ToInt32(Console.ReadLine());
+                            if (newUserInput == 1)
+                            {
+                                newOrganicPet = new OrganicPet();
+                                newOrganicPet.CreatePet();
+                                ourPetShelter.AddOrganicPetToShelter(newOrganicPet);
+                            }
+                            else if (newUserInput == 2)
+                            {
+                                newRoboticPet = new RoboticPet();
+                                newRoboticPet.CreatePet();
+                                ourPetShelter.AddRoboticPetToShelter(newRoboticPet);
+                            }
+                            //Need an else
+                            //newOrganicPet = new OrganicPet();
+                            //newOrganicPet.CreatePet();
+                            //ourPetShelter.AddOrganicPetToShelter(newOrganicPet);
                             break;
                         }
                     case "2":
                         {
-
-                            ourPetShelter.ShowOrganicShelteredPetsInfo();
-                            //move to ChoosePetFromList
-                            newOrganicPet = ourPetShelter.ChoosePetFromOrganicList();
-                            Console.WriteLine($"You've selected {newOrganicPet.Name}. Returning to Main Menu.");
+                            Console.WriteLine("Which pet list do you wish to see?: 1.Organic 2.Robotic");
+                            int newUserInput = Convert.ToInt32(Console.ReadLine());
+                            if (newUserInput == 1)
+                            {
+                                ourPetShelter.ShowOrganicShelteredPetsInfo();
+                                newOrganicPet = ourPetShelter.ChoosePetFromOrganicList();
+                                Console.WriteLine($"You've selected {newOrganicPet.Name}. Returning to Main Menu.");
+                            }
+                            else if (newUserInput == 2)
+                            {
+                                ourPetShelter.ShowRoboticShelteredPetsInfo();
+                                newRoboticPet = ourPetShelter.ChoosePetFromRoboticList();
+                                Console.WriteLine($"You've selected {newRoboticPet.Name}. Returning to Main Menu.");
+                            }
+                            //else statement needed
                             break;
                         }
                     case "3":
                         {
-                            ourPetShelter.ShowOrganicShelteredPetsInfo();
+                            Console.WriteLine("Which pet list do you wish to see?: 1.Organic 2.Robotic");
+                            int newUserInput = Convert.ToInt32(Console.ReadLine());
+                            if (newUserInput == 1)
+                            {
+                                ourPetShelter.ShowOrganicShelteredPetsInfo();
+                            }
+                            else if (newUserInput == 2)
+                            {
+                                ourPetShelter.ShowRoboticShelteredPetsInfo();
+                            }
+                            //else statement needed
                             break;
                         }
                     case "4":
                         {
-                            ourPetShelter.ShowShelteredOrganicPetsStatus();
-
+                            Console.WriteLine("Which pet list do you wish to see?: 1.Organic 2.Robotic");
+                            int newUserInput = Convert.ToInt32(Console.ReadLine());
+                            if (newUserInput == 1)
+                            {
+                                ourPetShelter.ShowShelteredOrganicPetsStatus();
+                            }
+                            else if (newUserInput == 2)
+                            {
+                                ourPetShelter.ShowShelteredRoboticPetsStatus();
+                            }
+                            //else statement
                             break;
                         }
                     case "5":
                         {
-                            //Console.WriteLine("Would you like to feed your pet a snack or dinner?");
-                            //Console.WriteLine("Press '1' for snack or '2' for dinner.");
                             Console.WriteLine($"Press '1' to feed {newOrganicPet.Name} or '2' to feed all pets. Press any other key to return to the main menu.");
                             string mealChoice = Console.ReadLine();
 
                             if (mealChoice == "1")
                             {
-                                //newUserPet.FeedPetSnack();
                                 newOrganicPet.FeedPetDinner();
                                 Console.WriteLine($"You fed {newOrganicPet.Name} dinner. Your pet is now full.");
                             }

@@ -6,6 +6,7 @@ namespace VirtualPetsAmok
 {
     public class VirtualPetShelter
     {
+        public List<VirtualPet> allShelteredPets = new List<VirtualPet>();
         public List<OrganicPet> shelteredOrganicPets = new List<OrganicPet>();
         public List<RoboticPet> shelteredRoboticPets = new List<RoboticPet>();
 
@@ -64,33 +65,21 @@ namespace VirtualPetsAmok
 
         public void FeedAllPetsDinner()
         {
-            foreach (OrganicPet pet in shelteredOrganicPets)
-            {
-                pet.FeedPetDinner();
-            }
-            foreach (RoboticPet pet in shelteredRoboticPets)
+            foreach (VirtualPet pet in allShelteredPets)
             {
                 pet.FeedPetDinner();
             }
         }
         public void TakeAllPetsToDoctor()
         {
-            foreach (OrganicPet pet in shelteredOrganicPets)
-            {
-                pet.TakePetToDoctor();
-            }
-            foreach (RoboticPet pet in shelteredRoboticPets)
+            foreach (VirtualPet pet in allShelteredPets)
             {
                 pet.TakePetToDoctor();
             }
         }
         public void PlayWithAllPets()
         {
-            foreach (OrganicPet pet in shelteredOrganicPets)
-            {
-                pet.PlayWithPet();
-            }
-            foreach (RoboticPet pet in shelteredRoboticPets)
+            foreach (VirtualPet pet in allShelteredPets)
             {
                 pet.PlayWithPet();
             }
@@ -98,12 +87,14 @@ namespace VirtualPetsAmok
         public void AddOrganicPetToShelter(OrganicPet pet)
         {
             shelteredOrganicPets.Add(pet);
+            allShelteredPets.Add(pet);
             Console.WriteLine($"You successfully added {pet.Name} to the shelter!");
             //move to OrganicPet.cs
         }
         public void AddRoboticPetToShelter(RoboticPet pet)
         {
             shelteredRoboticPets.Add(pet);
+            allShelteredPets.Add(pet);
             Console.WriteLine($"You successfully added {pet.Name} to the shelter!");
         }
     }

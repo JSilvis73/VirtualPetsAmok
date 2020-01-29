@@ -8,15 +8,10 @@ namespace VirtualPetsAmok
     {
         public string Name { get; set; }
         public string PetSpecies { get; set; }
-        public int HungerLevel { get; set; }
         public int BoredomLevel { get; set; }
-        public int HealthLevel { get; set; }
         public VirtualPet()
         {
-            HungerLevel = 3;
             BoredomLevel = 3;
-            //leave health at 7 for sake of testing?
-            HealthLevel = 7;
         }
 
         public VirtualPet(string name, string species)

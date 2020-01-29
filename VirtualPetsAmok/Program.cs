@@ -16,9 +16,19 @@ namespace VirtualPetsAmok
             Console.WriteLine("Welcome to VirtualPets! Let's get started by adding your first pet to the shelter.");
             Console.WriteLine("What is your pet?: 1.Organic 2.Robotic");
             int userInput = Convert.ToInt32(Console.ReadLine());
+            if (userInput == 1)
+            {
+                newOrganicPet.CreatePet();
+                ourPetShelter.AddOrganicPetToShelter(newOrganicPet);
+            }
+            else
+            {
+                newRoboticPet.CreatePet();
+                ourPetShelter.AddRoboticPetToShelter(newRoboticPet);
+            }
             
             
-            //ourPetShelter.AddPetToShelter(newOrganicPet); or robotic version
+            
             
 
             do

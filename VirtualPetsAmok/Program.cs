@@ -8,8 +8,8 @@ namespace VirtualPetsAmok
     {
         static void Main(string[] args)
         {
-            VirtualPet newUserPet = new VirtualPet();
-            
+            OrganicPet newOrganicPet = new OrganicPet();
+            RoboticPet newRoboticPet = new RoboticPet();
             VirtualPetShelter ourPetShelter = new VirtualPetShelter();
             bool playing = true;
 
@@ -18,7 +18,7 @@ namespace VirtualPetsAmok
             int userInput = Convert.ToInt32(Console.ReadLine());
             
             
-            ourPetShelter.AddPetToShelter(newUserPet);
+            //ourPetShelter.AddPetToShelter(newOrganicPet); or robotic version
             
 
             do
@@ -39,28 +39,28 @@ namespace VirtualPetsAmok
                 {
                     case "1":
                         {
-                            newUserPet = new VirtualPet();
-                            newUserPet.CreatePet();
-                            ourPetShelter.AddPetToShelter(newUserPet);
+                            newOrganicPet = new OrganicPet();
+                            newOrganicPet.CreatePet();
+                            ourPetShelter.AddOrganicPetToShelter(newOrganicPet);
                             break;
                         }
                     case "2":
                         {
 
-                            ourPetShelter.ShowShelteredPetsInfo();
+                            ourPetShelter.ShowOrganicShelteredPetsInfo();
                             //move to ChoosePetFromList
-                            newUserPet = ourPetShelter.ChoosePetFromList();
-                            Console.WriteLine($"You've selected {newUserPet.Name}. Returning to Main Menu.");
+                            newOrganicPet = ourPetShelter.ChoosePetFromOrganicList();
+                            Console.WriteLine($"You've selected {newOrganicPet.Name}. Returning to Main Menu.");
                             break;
                         }
                     case "3":
                         {
-                            ourPetShelter.ShowShelteredPetsInfo();
+                            ourPetShelter.ShowOrganicShelteredPetsInfo();
                             break;
                         }
                     case "4":
                         {
-                            ourPetShelter.ShowShelteredPetsStatus();
+                            ourPetShelter.ShowShelteredOrganicPetsStatus();
 
                             break;
                         }
@@ -68,14 +68,14 @@ namespace VirtualPetsAmok
                         {
                             //Console.WriteLine("Would you like to feed your pet a snack or dinner?");
                             //Console.WriteLine("Press '1' for snack or '2' for dinner.");
-                            Console.WriteLine($"Press '1' to feed {newUserPet.Name} or '2' to feed all pets. Press any other key to return to the main menu.");
+                            Console.WriteLine($"Press '1' to feed {newOrganicPet.Name} or '2' to feed all pets. Press any other key to return to the main menu.");
                             string mealChoice = Console.ReadLine();
 
                             if (mealChoice == "1")
                             {
                                 //newUserPet.FeedPetSnack();
-                                newUserPet.FeedPetDinner();
-                                Console.WriteLine($"You fed {newUserPet.Name} dinner. Your pet is now full.");
+                                newOrganicPet.FeedPetDinner();
+                                Console.WriteLine($"You fed {newOrganicPet.Name} dinner. Your pet is now full.");
                             }
                             else if (mealChoice == "2")
                             {
@@ -90,12 +90,12 @@ namespace VirtualPetsAmok
                         }
                     case "6":
                         {
-                            Console.WriteLine($"Press '1' to take {newUserPet.Name} to the doctor or '2' to take all pets to the doctor. Press any other key to return to the main menu.");
+                            Console.WriteLine($"Press '1' to take {newOrganicPet.Name} to the doctor or '2' to take all pets to the doctor. Press any other key to return to the main menu.");
                             string doctorChoice = Console.ReadLine();
                             if (doctorChoice == "1")
                             {
-                                Console.WriteLine($"You took {newUserPet.Name} to the doctor. It is now healthy.");
-                                newUserPet.TakePetToDoctor();
+                                Console.WriteLine($"You took {newOrganicPet.Name} to the doctor. It is now healthy.");
+                                newOrganicPet.TakePetToDoctor();
                             }
                             else if (doctorChoice == "2")
                             {
@@ -110,12 +110,12 @@ namespace VirtualPetsAmok
                         }
                     case "7":
                         {
-                            Console.WriteLine($"Press '1' to play with {newUserPet.Name} or '2' to play with all of your pets. Press any other key to return to the main menu.");
+                            Console.WriteLine($"Press '1' to play with {newOrganicPet.Name} or '2' to play with all of your pets. Press any other key to return to the main menu.");
                             string playChoice = Console.ReadLine();
                             if (playChoice == "1")
                             {
-                                newUserPet.PlayWithPet();
-                                Console.WriteLine($"You have played with {newUserPet.Name}! Its status has changed.");
+                                newOrganicPet.PlayWithPet();
+                                Console.WriteLine($"You have played with {newOrganicPet.Name}! Its status has changed.");
                             }
                             else if (playChoice == "2")
                             {

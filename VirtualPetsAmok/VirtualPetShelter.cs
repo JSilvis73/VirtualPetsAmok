@@ -6,31 +6,32 @@ namespace VirtualPetsAmok
 {
     public class VirtualPetShelter
     {
-        public List<VirtualPet> shelteredPets = new List<VirtualPet>();
+        public List<OrganicPet> shelteredOrganicPets = new List<OrganicPet>();
+        public List<RoboticPet> shelteredRoboticPets = new List<RoboticPet>();
 
-        public void ShowShelteredPetsInfo()
+        public void ShowOrganicShelteredPetsInfo()
         {
             int count = 1;
-            foreach (VirtualPet pet in shelteredPets)
+            foreach (OrganicPet pet in shelteredOrganicPets)
             {
                 Console.WriteLine($"{count}. Pet name: {pet.Name}  Species: {pet.PetSpecies}");
                 count++;
             }
         }
-        public VirtualPet ChoosePetFromList()
+        public OrganicPet ChoosePetFromOrganicList()
         {
             Console.WriteLine("Please select the pet number that you would like to interact with.");
             int selectPet = Convert.ToInt32(Console.ReadLine());
             int petNumber = (selectPet - 1);
-            return shelteredPets[petNumber];
+            return shelteredOrganicPets[petNumber];
 
         }
 
 
-        public void ShowShelteredPetsStatus()
+        public void ShowShelteredOrganicPetsStatus()
         {
             int count = 1;
-            foreach (VirtualPet pet in shelteredPets)
+            foreach (VirtualPet pet in shelteredOrganicPets)
             {
                 Console.WriteLine($"{count}. {pet.Name}: Hunger Level: {pet.HungerLevel} Boredom Level: {pet.BoredomLevel} Health Level: {pet.HealthLevel}");
                 count++;
@@ -38,7 +39,11 @@ namespace VirtualPetsAmok
         }
         public void FeedAllPetsDinner()
         {
-            foreach (VirtualPet pet in shelteredPets)
+            foreach (OrganicPet pet in shelteredOrganicPets)
+            {
+                pet.FeedPetDinner();
+            }
+            foreach (RoboticPet pet in shelteredRoboticPets)
             {
                 pet.FeedPetDinner();
             }
@@ -53,23 +58,36 @@ namespace VirtualPetsAmok
 
         public void TakeAllPetsToDoctor()
         {
-            foreach (VirtualPet pet in shelteredPets)
+            foreach (OrganicPet pet in shelteredOrganicPets)
+            {
+                pet.TakePetToDoctor();
+            }
+            foreach (RoboticPet pet in shelteredRoboticPets)
             {
                 pet.TakePetToDoctor();
             }
         }
         public void PlayWithAllPets()
         {
-            foreach (VirtualPet pet in shelteredPets)
+            foreach (OrganicPet pet in shelteredOrganicPets)
+            {
+                pet.PlayWithPet();
+            }
+            foreach (RoboticPet pet in shelteredRoboticPets)
             {
                 pet.PlayWithPet();
             }
         }
-        public void AddPetToShelter(VirtualPet pet)
+        public void AddOrganicPetToShelter(OrganicPet pet)
         {
-            shelteredPets.Add(pet);
+            shelteredOrganicPets.Add(pet);
             Console.WriteLine($"You successfully added {pet.Name} to the shelter!");
             //move to OrganicPet.cs
+        }
+        public void AddRoboticPetToShelter(RoboticPet pet)
+        {
+            shelteredRoboticPets.Add(pet);
+            Console.WriteLine($"You successfully added {pet.Name} to the shelter!");
         }
     }
     

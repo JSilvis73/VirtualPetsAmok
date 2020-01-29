@@ -18,25 +18,50 @@ namespace VirtualPetsAmok
                 count++;
             }
         }
-        public OrganicPet ChoosePetFromOrganicList()
+        public void ShowRoboticShelteredPetsInfo()
         {
-            Console.WriteLine("Please select the pet number that you would like to interact with.");
-            int selectPet = Convert.ToInt32(Console.ReadLine());
-            int petNumber = (selectPet - 1);
-            return shelteredOrganicPets[petNumber];
-
+            int count = 1;
+            foreach (RoboticPet pet in shelteredRoboticPets)
+            {
+                Console.WriteLine($"{count}. Pet name: {pet.Name}  Species: {pet.PetSpecies}");
+                count++;
+            }
         }
-
-
         public void ShowShelteredOrganicPetsStatus()
         {
             int count = 1;
-            foreach (VirtualPet pet in shelteredOrganicPets)
+            foreach (OrganicPet pet in shelteredOrganicPets)
             {
                 Console.WriteLine($"{count}. {pet.Name}: Hunger Level: {pet.HungerLevel} Boredom Level: {pet.BoredomLevel} Health Level: {pet.HealthLevel}");
                 count++;
             }
         }
+        public void ShowShelteredRoboticPetsStatus()
+        {
+            int count = 1;
+            foreach (RoboticPet pet in shelteredRoboticPets)
+            {
+                Console.WriteLine($"{count}. {pet.Name}: Oil Need: {pet.OilNeed} Boredom Level: {pet.BoredomLevel} Performance Level: {pet.PerformanceLevel}");
+                count++;
+            }
+        }
+        public OrganicPet ChoosePetFromOrganicList()
+        {
+            Console.WriteLine("Please select the organic pet number that you would like to interact with.");
+            int selectPet = Convert.ToInt32(Console.ReadLine());
+            int petNumber = (selectPet - 1);
+            return shelteredOrganicPets[petNumber];
+        }
+        public RoboticPet ChoosePetFromRoboticList()
+        {
+            Console.WriteLine("Please select the robotic pet number that you would like to interact with.");
+            int selectPet = Convert.ToInt32(Console.ReadLine());
+            int petNumber = (selectPet - 1);
+            return shelteredRoboticPets[petNumber];
+        }
+
+
+
         public void FeedAllPetsDinner()
         {
             foreach (OrganicPet pet in shelteredOrganicPets)
@@ -48,14 +73,6 @@ namespace VirtualPetsAmok
                 pet.FeedPetDinner();
             }
         }
-        /*public void FeedAllPetsSnack()
-        {
-            foreach(OrganicPet pet in shelteredPets)
-            {
-                pet.HungerLevel -= 2;
-            }
-        }*/
-
         public void TakeAllPetsToDoctor()
         {
             foreach (OrganicPet pet in shelteredOrganicPets)

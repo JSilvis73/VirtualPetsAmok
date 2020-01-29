@@ -26,10 +26,6 @@ namespace VirtualPetsAmok
                 newRoboticPet.CreatePet();
                 ourPetShelter.AddRoboticPetToShelter(newRoboticPet);
             }
-            
-            
-            
-            
 
             do
             {

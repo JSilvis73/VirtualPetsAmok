@@ -6,5 +6,9 @@ namespace VirtualPetsAmok
 {
     public class OrganicPet : VirtualPet
     {
+        public override void CreatePet()
+        {
+            base.CreatePet();
+        }
     }
 }

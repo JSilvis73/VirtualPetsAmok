@@ -9,11 +9,15 @@ namespace VirtualPetsAmok
         static void Main(string[] args)
         {
             VirtualPet newUserPet = new VirtualPet();
+            
             VirtualPetShelter ourPetShelter = new VirtualPetShelter();
             bool playing = true;
 
             Console.WriteLine("Welcome to VirtualPets! Let's get started by adding your first pet to the shelter.");
-            newUserPet.CreatePet();
+            Console.WriteLine("What is your pet?: 1.Organic 2.Robotic");
+            int userInput = Convert.ToInt32(Console.ReadLine());
+            
+            
             ourPetShelter.AddPetToShelter(newUserPet);
             
 

@@ -73,7 +73,7 @@ namespace VirtualPetsAmok
             Name = petName;
         }
 
-        public void FeedPetDinner()
+        public virtual void FeedPetDinner()
         {
             this.HungerLevel = 0;
         }

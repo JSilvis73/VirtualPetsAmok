@@ -70,55 +70,16 @@ namespace VirtualPetsAmok
 
         public virtual void FeedPetDinner()
         {
-            this.HungerLevel = 0;
+            
         }
-
-        /*public void FeedPetSnack()
-        {
-            if (HungerLevel <= 2)
-            {
-                this.HungerLevel = 0;
-            }
-            else
-            {
-                this.HungerLevel -= 2;
-            }
-        }*/
-
-        public void TakePetToDoctor()
-        {
-            this.HealthLevel = 10;
-        }
-
-        public void PlayWithPet()
+        public virtual void TakePetToDoctor()
         {
             
-            if(this.BoredomLevel > 2)
-            {
-                this.BoredomLevel -= 2;
-            }
-            else
-            {
-                this.BoredomLevel = 0;
-            }
-            
-            if(this.HealthLevel <= 9)
-            {
-                this.HealthLevel += 1;
-            }
-            else
-            {
-                this.HealthLevel = 10;
-            }
+        }
 
-            if(this.HungerLevel < 8)
-            {
-                this.HungerLevel += 2;
-            }
-            else
-            {
-                this.HungerLevel = 10;
-            }
+        public virtual void PlayWithPet()
+        {
+            
         }
     }
 }

@@ -6,8 +6,8 @@ namespace VirtualPetsAmok
 {
     public class RoboticPet : VirtualPet
     {
-        public string OilLevel { get; set; }
-        public string PerformanceLevel { get; set; }
+        public int OilNeed { get; set; }
+        public int PerformanceLevel { get; set; }
 
         public override void CreatePet()
         {
@@ -51,6 +51,28 @@ namespace VirtualPetsAmok
 
 
 
+        }
+        public override void FeedPetDinner()
+        {
+            if (OilNeed < 5)
+            {
+                OilNeed = 0;
+            }
+            else
+            {
+                OilNeed -= 5;
+            }
+        }
+        public override void TakePetToDoctor()
+        {
+            if (PerformanceLevel > 5)
+            {
+                PerformanceLevel = 10;
+            }
+            else
+            {
+                PerformanceLevel += 5;
+            }
         }
     }
 }

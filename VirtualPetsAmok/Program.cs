@@ -12,6 +12,7 @@ namespace VirtualPetsAmok
             RoboticPet newRoboticPet = new RoboticPet();
             VirtualPetShelter ourPetShelter = new VirtualPetShelter();
             bool playing = true;
+            int time = 0;
 
             Console.WriteLine("Welcome to VirtualPets! Let's get started by adding your first pet to the shelter.");
             bool validOption = false;
@@ -51,8 +52,16 @@ namespace VirtualPetsAmok
                 Console.WriteLine("8. Adopt a Pet (Remove from list)");
                 Console.WriteLine("9. Exit");
                 Console.Write("\nPlease enter a number 1 through 9: ");
-                string userChoice = Console.ReadLine();
 
+                if (time % 5 == 0)
+                {
+                    foreach (VirtualPet pet in ourPetShelter.allShelteredPets)
+                    {
+                        pet.TimeLapse();
+                    }
+                }
+
+                string userChoice = Console.ReadLine();
                 switch (userChoice)
                 {
                     case "1":
@@ -145,18 +154,21 @@ namespace VirtualPetsAmok
                                     {
                                         newOrganicPet.FeedPetDinner();
                                         Console.WriteLine($"You fed {newOrganicPet.Name} dinner. Your pet is now full.");
+                                        time++;
                                         break;
                                     }
                                 case "2":
                                     {
                                         newRoboticPet.FeedPetDinner();
                                         Console.WriteLine($"You oiled {newRoboticPet.Name}. No more squeaks!");
+                                        time++;
                                         break;
                                     }
                                 case "3":
                                     {
                                         ourPetShelter.FeedAllPetsDinner();
                                         Console.WriteLine("You have fed and/or oiled all the pets in the shelter!");
+                                        time++;
                                         break;
                                     }
                                 default:
@@ -177,18 +189,21 @@ namespace VirtualPetsAmok
                                     {
                                         newOrganicPet.TakePetToDoctor();
                                         Console.WriteLine($"You took {newOrganicPet.Name} to the doctor. It is now healthy!");
+                                        time++;
                                         break;
                                     }
                                 case "2":
                                     {
                                         newRoboticPet.TakePetToDoctor();
                                         Console.WriteLine($"You took {newRoboticPet.Name} to the mechanic. It is now functioning properly!");
+                                        time++;
                                         break;
                                     }
                                 case "3":
                                     {
                                         ourPetShelter.TakeAllPetsToDoctor();
                                         Console.WriteLine("You took all your pets to the doctor/mechanic. All of them are now healthy!");
+                                        time++;
                                         break;
                                     }
                                 default:
@@ -197,20 +212,6 @@ namespace VirtualPetsAmok
                                         break;
                                     }
                             }
-                            //if (doctorChoice == "1")
-                            //{
-                            //    Console.WriteLine($"You took {newOrganicPet.Name} to the doctor. It is now healthy.");
-                            //    newOrganicPet.TakePetToDoctor();
-                            //}
-                            //else if (doctorChoice == "2")
-                            //{
-                            //    ourPetShelter.TakeAllPetsToDoctor();
-                            //    Console.WriteLine("You took all your pets to the doctor. All of them are now healthy.");
-                            //}
-                            //else
-                            //{
-                            //    Console.WriteLine("Returning to main menu.");
-                            //}
                             break;
                         }
                     case "7":
@@ -223,18 +224,21 @@ namespace VirtualPetsAmok
                                     {
                                         newOrganicPet.PlayWithPet();
                                         Console.WriteLine($"You have played with {newOrganicPet.Name}! It's less bored and healthier, but is more hungry now!");
+                                        time++;
                                         break;
                                     }
                                 case "2":
                                     {
                                         newRoboticPet.PlayWithPet();
                                         Console.WriteLine($"You have played with {newRoboticPet.Name}! It's less bored, but now needs some oil and maintenance!");
+                                        time++;
                                         break;
                                     }
                                 case "3":
                                     {
                                         ourPetShelter.PlayWithAllPets();
                                         Console.WriteLine("You have played with all pets in the shelter! Their statuses have changed.");
+                                        time++;
                                         break;
                                     }
                             }

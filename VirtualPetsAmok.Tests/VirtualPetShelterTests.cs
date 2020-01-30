@@ -26,9 +26,9 @@ namespace VirtualPetsAmok.Tests
 
             petShelter.FeedAllPetsDinner();
 
-            Assert.Equal(0, petShelter.shelteredOrganicPets[0].HungerLevel);
-            Assert.Equal(0, petShelter.shelteredOrganicPets[1].HungerLevel);
-            Assert.Equal(0, petShelter.shelteredOrganicPets[2].HungerLevel);
+            Assert.Equal(0, petShelter.allShelteredPets[0].HungerLevel);
+            Assert.Equal(0, petShelter.allShelteredPets[1].HungerLevel);
+            Assert.Equal(0, petShelter.allShelteredPets[2].HungerLevel);
 
         }
         [Fact]
@@ -114,7 +114,7 @@ namespace VirtualPetsAmok.Tests
             petShelter.shelteredOrganicPets.Add(newOrganicPet);
             petShelter.shelteredOrganicPets.Add(newOrganicPet);
             //act
-            petShelter.AdoptOrganicPet();
+            petShelter.AdoptPet();
             //assert
             Assert.Equal(2, petShelter.shelteredOrganicPets.Count);
         }

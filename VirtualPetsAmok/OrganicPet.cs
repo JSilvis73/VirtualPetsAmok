@@ -55,5 +55,34 @@ namespace VirtualPetsAmok
                 this.HungerLevel = 10;
             }
         }
+        public override void TimeLapse()
+        {
+            if(this.BoredomLevel < 8)
+            {
+                this.BoredomLevel += 2;
+            }
+            else
+            {
+                this.BoredomLevel = 10;
+            }
+
+            if (this.HealthLevel >= 1)
+            {
+                this.HealthLevel -= 1;
+            }
+            else
+            {
+                this.HealthLevel = 0;
+            }
+
+            if (this.HungerLevel < 8)
+            {
+                this.HungerLevel =+ 2;
+            }
+            else
+            {
+                this.HungerLevel = 10;
+            }
+        }
     }
 }

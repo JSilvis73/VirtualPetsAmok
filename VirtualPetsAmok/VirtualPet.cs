@@ -81,5 +81,9 @@ namespace VirtualPetsAmok
         {
             
         }
+        public virtual void TimeLapse()
+        {
+
+        }
     }
 }

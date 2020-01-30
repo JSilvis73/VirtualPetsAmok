@@ -109,5 +109,34 @@ namespace VirtualPetsAmok
                 this.OilNeed = 10;
             }
         }
+        public override void TimeLapse()
+        {
+            if (this.BoredomLevel < 8)
+            {
+                this.BoredomLevel += 2;
+            }
+            else
+            {
+                this.BoredomLevel = 10;
+            }
+
+            if (this.PerformanceLevel > 0)
+            {
+                this.PerformanceLevel -= 1;
+            }
+            else
+            {
+                this.PerformanceLevel = 0;
+            }
+
+            if (this.OilNeed < 8)
+            {
+                this.OilNeed += 2;
+            }
+            else
+            {
+                this.OilNeed = 10;
+            }
+        }
     }
 }

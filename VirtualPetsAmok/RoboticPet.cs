@@ -6,8 +6,13 @@ namespace VirtualPetsAmok
 {
     public class RoboticPet : VirtualPet
     {
-        public string OilLevel { get; set; }
-        public string PerformanceLevel { get; set; }
+        public int OilNeed { get; set; }
+        public int PerformanceLevel { get; set; }
+        public RoboticPet() : base()
+        {
+            OilNeed = 5;
+            PerformanceLevel = 8;
+        }
 
         public override void CreatePet()
         {
@@ -32,7 +37,7 @@ namespace VirtualPetsAmok
             while (giveValidSpecies == false)
             {
                 Console.WriteLine("What species would you like your pet to be? (Duck, Dog, Cat, Mouse, etc.)");
-                string userAddedPetSpecies = ("robotic" + Console.ReadLine());
+                string userAddedPetSpecies = ("Robotic " + Console.ReadLine());
                 if (userAddedPetSpecies == "")
                 {
                     Console.WriteLine("You did not enter a valid species. Empty fields are not acceptable.");
@@ -46,5 +51,92 @@ namespace VirtualPetsAmok
                 }
             }
 
+
+
+
+
+
+        }
+        public override void FeedPetDinner()
+        {
+            if (OilNeed < 5)
+            {
+                OilNeed = 0;
+            }
+            else
+            {
+                OilNeed -= 5;
+            }
+        }
+        public override void TakePetToDoctor()
+        {
+            if (PerformanceLevel > 5)
+            {
+                PerformanceLevel = 10;
+            }
+            else
+            {
+                PerformanceLevel += 5;
+            }
+        }
+        public override void PlayWithPet()
+        {
+
+            if (BoredomLevel > 3)
+            {
+                BoredomLevel -= 3;
+            }
+            else
+            {
+                BoredomLevel = 0;
+            }
+
+            if (PerformanceLevel > 0)
+            {
+                PerformanceLevel -= 1;
+            }
+            else
+            {
+                PerformanceLevel = 0;
+            }
+
+            if (OilNeed < 7)
+            {
+                OilNeed += 3;
+            }
+            else
+            {
+                OilNeed = 10;
+            }
+        }
+        public override void TimeLapse()
+        {
+            if (BoredomLevel < 8)
+            {
+                BoredomLevel += 2;
+            }
+            else
+            {
+                BoredomLevel = 10;
+            }
+
+            if (PerformanceLevel > 0)
+            {
+                PerformanceLevel -= 1;
+            }
+            else
+            {
+                PerformanceLevel = 0;
+            }
+
+            if (OilNeed < 8)
+            {
+                OilNeed += 2;
+            }
+            else
+            {
+                OilNeed = 10;
+            }
+        }
     }
 }

@@ -8,15 +8,10 @@ namespace VirtualPetsAmok
     {
         public string Name { get; set; }
         public string PetSpecies { get; set; }
-        public int HungerLevel { get; set; }
         public int BoredomLevel { get; set; }
-        public int HealthLevel { get; set; }
         public VirtualPet()
         {
-            HungerLevel = 3;
             BoredomLevel = 3;
-            //leave health at 7 for sake of testing?
-            HealthLevel = 7;
         }
 
         public VirtualPet(string name, string species)
@@ -73,57 +68,22 @@ namespace VirtualPetsAmok
             Name = petName;
         }
 
-        public void FeedPetDinner()
-        {
-            this.HungerLevel = 0;
-        }
-
-        /*public void FeedPetSnack()
-        {
-            if (HungerLevel <= 2)
-            {
-                this.HungerLevel = 0;
-            }
-            else
-            {
-                this.HungerLevel -= 2;
-            }
-        }*/
-
-        public void TakePetToDoctor()
-        {
-            this.HealthLevel = 10;
-        }
-
-        public void PlayWithPet()
+        public virtual void FeedPetDinner()
         {
             
-            if(this.BoredomLevel > 2)
-            {
-                this.BoredomLevel -= 2;
-            }
-            else
-            {
-                this.BoredomLevel = 0;
-            }
+        }
+        public virtual void TakePetToDoctor()
+        {
             
-            if(this.HealthLevel <= 9)
-            {
-                this.HealthLevel += 1;
-            }
-            else
-            {
-                this.HealthLevel = 10;
-            }
+        }
 
-            if(this.HungerLevel < 8)
-            {
-                this.HungerLevel += 2;
-            }
-            else
-            {
-                this.HungerLevel = 10;
-            }
+        public virtual void PlayWithPet()
+        {
+            
+        }
+        public virtual void TimeLapse()
+        {
+
         }
     }
 }

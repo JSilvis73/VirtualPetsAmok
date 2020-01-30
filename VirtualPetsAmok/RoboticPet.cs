@@ -91,13 +91,13 @@ namespace VirtualPetsAmok
                 this.BoredomLevel = 0;
             }
 
-            if (this.PerformanceLevel <= 8)
+            if (this.PerformanceLevel > 0)
             {
-                this.PerformanceLevel += 2;
+                this.PerformanceLevel -= 1;
             }
             else
             {
-                this.PerformanceLevel = 10;
+                this.PerformanceLevel = 0;
             }
 
             if (this.OilNeed < 7)

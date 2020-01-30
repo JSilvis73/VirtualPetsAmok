@@ -14,17 +14,28 @@ namespace VirtualPetsAmok
             bool playing = true;
 
             Console.WriteLine("Welcome to VirtualPets! Let's get started by adding your first pet to the shelter.");
-            Console.WriteLine("What is your pet?: 1.Organic 2.Robotic");
-            int userInput = Convert.ToInt32(Console.ReadLine());
-            if (userInput == 1)
+            bool validOption = false;
+            while (validOption == false)
             {
-                newOrganicPet.CreatePet();
-                ourPetShelter.AddOrganicPetToShelter(newOrganicPet);
-            }
-            else
-            {
-                newRoboticPet.CreatePet();
-                ourPetShelter.AddRoboticPetToShelter(newRoboticPet);
+                Console.WriteLine("What is your pet?: 1.Organic 2.Robotic");
+                string userInput = (Console.ReadLine());
+                if (userInput == "1")
+                {
+                    newOrganicPet.CreatePet();
+                    ourPetShelter.AddOrganicPetToShelter(newOrganicPet);
+                    validOption = true;
+                }
+                else if (userInput == "2")
+                {
+                    newRoboticPet.CreatePet();
+                    ourPetShelter.AddRoboticPetToShelter(newRoboticPet);
+                    validOption = true;
+                }
+                else
+                {
+                    Console.WriteLine("Please enter '1' or '2'.");
+                }
+
             }
 
             do
@@ -46,18 +57,22 @@ namespace VirtualPetsAmok
                     case "1":
                         {
                             Console.WriteLine("What is your pet?: 1.Organic 2.Robotic");
-                            int newUserInput = Convert.ToInt32(Console.ReadLine());
-                            if (newUserInput == 1)
+                            string newUserInput = Console.ReadLine();
+                            if (newUserInput == "1")
                             {
                                 newOrganicPet = new OrganicPet();
                                 newOrganicPet.CreatePet();
                                 ourPetShelter.AddOrganicPetToShelter(newOrganicPet);
                             }
-                            else if (newUserInput == 2)
+                            else if (newUserInput == "2")
                             {
                                 newRoboticPet = new RoboticPet();
                                 newRoboticPet.CreatePet();
                                 ourPetShelter.AddRoboticPetToShelter(newRoboticPet);
+                            }
+                            else
+                            {
+                                Console.WriteLine("You didn't enter a valid number.");
                             }
                             //Need an else
                             //newOrganicPet = new OrganicPet();
@@ -116,43 +131,54 @@ namespace VirtualPetsAmok
                         }
                     case "5":
                         {
-                            Console.WriteLine($"Press '1' to feed {newOrganicPet.Name} or '2' to feed all pets. Press any other key to return to the main menu.");
+                            Console.WriteLine($"Press '1' to feed {newOrganicPet.Name} or '2' to feed {newRoboticPet.Name}. \nPress '3' to feed/oil all pets. \nPress any other key to return to main menu.");
                             string mealChoice = Console.ReadLine();
-
-                            if (mealChoice == "1")
+                            switch (mealChoice)
                             {
-                                newOrganicPet.FeedPetDinner();
-                                Console.WriteLine($"You fed {newOrganicPet.Name} dinner. Your pet is now full.");
-                            }
-                            else if (mealChoice == "2")
-                            {
-                                ourPetShelter.FeedAllPetsDinner();
-                                Console.WriteLine("You fed all of your pets dinner. All pets are full.");
-                            }
-                            else
-                            {
-                                Console.WriteLine("Returning to main menu.");
+                                case "1":
+                                    {
+                                        newOrganicPet.FeedPetDinner();
+                                        Console.WriteLine($"You fed {newOrganicPet.Name} dinner. Your pet is now full.");
+                                        break;
+                                    }
+                                case "2":
+                                    {
+                                        newRoboticPet.FeedPetDinner();
+                                        Console.WriteLine($"You oiled {newRoboticPet.Name}. No more squeaks!");
+                                        break;
+                                    }
+                                case "3":
+                                    {
+                                        ourPetShelter.FeedAllPetsDinner();
+                                        Console.WriteLine("You have fed and/or oiled all the pets in the shelter!");
+                                        break;
+                                    }
+                                default:
+                                    {
+                                        Console.WriteLine("Returning to main menu.");
+                                        break;
+                                    }
                             }
                             break;
                         }
                     case "6":
                         {
-                            Console.WriteLine($"Press '1' to take {newOrganicPet.Name} to the doctor or '2' to take all pets to the doctor. Press any other key to return to the main menu.");
-                            string doctorChoice = Console.ReadLine();
-                            if (doctorChoice == "1")
-                            {
-                                Console.WriteLine($"You took {newOrganicPet.Name} to the doctor. It is now healthy.");
-                                newOrganicPet.TakePetToDoctor();
-                            }
-                            else if (doctorChoice == "2")
-                            {
-                                ourPetShelter.TakeAllPetsToDoctor();
-                                Console.WriteLine("You took all your pets to the doctor. All of them are now healthy.");
-                            }
-                            else
-                            {
-                                Console.WriteLine("Returning to main menu.");
-                            }
+                            //Console.WriteLine($"Press '1' to take {newOrganicPet.Name} to the doctor or '2' to take all pets to the doctor. Press any other key to return to the main menu.");
+                            //string doctorChoice = Console.ReadLine();
+                            //if (doctorChoice == "1")
+                            //{
+                            //    Console.WriteLine($"You took {newOrganicPet.Name} to the doctor. It is now healthy.");
+                            //    newOrganicPet.TakePetToDoctor();
+                            //}
+                            //else if (doctorChoice == "2")
+                            //{
+                            //    ourPetShelter.TakeAllPetsToDoctor();
+                            //    Console.WriteLine("You took all your pets to the doctor. All of them are now healthy.");
+                            //}
+                            //else
+                            //{
+                            //    Console.WriteLine("Returning to main menu.");
+                            //}
                             break;
                         }
                     case "7":

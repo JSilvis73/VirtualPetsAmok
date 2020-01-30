@@ -12,6 +12,7 @@ namespace VirtualPetsAmok
 
         public void ShowOrganicShelteredPetsInfo()
         {
+            Console.WriteLine("\nOrganic Pet List:");
             int count = 1;
             foreach (OrganicPet pet in shelteredOrganicPets)
             {
@@ -21,6 +22,7 @@ namespace VirtualPetsAmok
         }
         public void ShowRoboticShelteredPetsInfo()
         {
+            Console.WriteLine("\nRobotic Pet List:");
             int count = 1;
             foreach (RoboticPet pet in shelteredRoboticPets)
             {
@@ -30,6 +32,7 @@ namespace VirtualPetsAmok
         }
         public void ShowShelteredOrganicPetsStatus()
         {
+            Console.WriteLine("\nOrganic Pet Status:");
             int count = 1;
             foreach (OrganicPet pet in shelteredOrganicPets)
             {
@@ -39,6 +42,7 @@ namespace VirtualPetsAmok
         }
         public void ShowShelteredRoboticPetsStatus()
         {
+            Console.WriteLine("\nRobotic Pet Status:");
             int count = 1;
             foreach (RoboticPet pet in shelteredRoboticPets)
             {

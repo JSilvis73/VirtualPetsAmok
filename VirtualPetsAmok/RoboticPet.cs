@@ -8,6 +8,11 @@ namespace VirtualPetsAmok
     {
         public int OilNeed { get; set; }
         public int PerformanceLevel { get; set; }
+        public RoboticPet() : base()
+        {
+            OilNeed = 5;
+            PerformanceLevel = 8;
+        }
 
         public override void CreatePet()
         {
@@ -72,6 +77,36 @@ namespace VirtualPetsAmok
             else
             {
                 PerformanceLevel += 5;
+            }
+        }
+        public override void PlayWithPet()
+        {
+
+            if (this.BoredomLevel > 3)
+            {
+                this.BoredomLevel -= 3;
+            }
+            else
+            {
+                this.BoredomLevel = 0;
+            }
+
+            if (this.PerformanceLevel <= 8)
+            {
+                this.PerformanceLevel += 2;
+            }
+            else
+            {
+                this.PerformanceLevel = 10;
+            }
+
+            if (this.OilNeed < 7)
+            {
+                this.OilNeed += 3;
+            }
+            else
+            {
+                this.OilNeed = 10;
             }
         }
     }

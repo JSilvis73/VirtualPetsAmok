@@ -28,60 +28,60 @@ namespace VirtualPetsAmok
         public override void PlayWithPet()
         {
 
-            if (this.BoredomLevel > 2)
+            if (BoredomLevel > 2)
             {
-                this.BoredomLevel -= 2;
+                BoredomLevel -= 2;
             }
             else
             {
-                this.BoredomLevel = 0;
+                BoredomLevel = 0;
             }
 
-            if (this.HealthLevel <= 9)
+            if (HealthLevel < 10)
             {
-                this.HealthLevel += 1;
+                HealthLevel += 1;
             }
             else
             {
-                this.HealthLevel = 10;
+                HealthLevel = 10;
             }
 
-            if (this.HungerLevel < 8)
+            if (HungerLevel < 8)
             {
-                this.HungerLevel += 2;
+                HungerLevel += 2;
             }
             else
             {
-                this.HungerLevel = 10;
+                HungerLevel = 10;
             }
         }
         public override void TimeLapse()
         {
-            if(this.BoredomLevel < 8)
+            if(BoredomLevel < 8)
             {
-                this.BoredomLevel += 2;
+                BoredomLevel += 2;
             }
             else
             {
-                this.BoredomLevel = 10;
+                BoredomLevel = 10;
             }
 
-            if (this.HealthLevel >= 1)
+            if (HealthLevel >= 1)
             {
-                this.HealthLevel -= 1;
+                HealthLevel -= 1;
             }
             else
             {
-                this.HealthLevel = 0;
+                HealthLevel = 0;
             }
 
-            if (this.HungerLevel < 8)
+            if (HungerLevel < 8)
             {
-                this.HungerLevel =+ 2;
+                HungerLevel =+ 2;
             }
             else
             {
-                this.HungerLevel = 10;
+                HungerLevel = 10;
             }
         }
     }

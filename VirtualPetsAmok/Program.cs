@@ -48,8 +48,9 @@ namespace VirtualPetsAmok
                 Console.WriteLine("5. Feed Your Pet(s)");
                 Console.WriteLine("6. Take Pet(s) To Doctor");
                 Console.WriteLine("7. Play With Pet(s)");
-                Console.WriteLine("8. Exit");
-                Console.Write("\nPlease enter a number 1 through 8: ");
+                Console.WriteLine("8. Adopt a Pet (Remove from list)");
+                Console.WriteLine("9. Exit");
+                Console.Write("\nPlease enter a number 1 through 9: ");
                 string userChoice = Console.ReadLine();
 
                 switch (userChoice)
@@ -74,10 +75,6 @@ namespace VirtualPetsAmok
                             {
                                 Console.WriteLine("You didn't enter a valid number.");
                             }
-                            //Need an else
-                            //newOrganicPet = new OrganicPet();
-                            //newOrganicPet.CreatePet();
-                            //ourPetShelter.AddOrganicPetToShelter(newOrganicPet);
                             break;
                         }
                     case "2":
@@ -105,31 +102,37 @@ namespace VirtualPetsAmok
                     case "3":
                         {
                             Console.WriteLine("Which pet list do you wish to see?: 1.Organic 2.Robotic");
-                            int newUserInput = Convert.ToInt32(Console.ReadLine());
-                            if (newUserInput == 1)
+                            string newUserInput = Console.ReadLine();
+                            if (newUserInput == "1")
                             {
                                 ourPetShelter.ShowOrganicShelteredPetsInfo();
                             }
-                            else if (newUserInput == 2)
+                            else if (newUserInput == "2")
                             {
                                 ourPetShelter.ShowRoboticShelteredPetsInfo();
                             }
-                            //else statement needed
+                            else
+                            {
+                                Console.WriteLine("You did not enter '1' or '2'. Returning to main menu.");
+                            }
                             break;
                         }
                     case "4":
                         {
                             Console.WriteLine("Which pet list do you wish to see?: 1.Organic 2.Robotic");
-                            int newUserInput = Convert.ToInt32(Console.ReadLine());
-                            if (newUserInput == 1)
+                            string newUserInput = Console.ReadLine();
+                            if (newUserInput == "1")
                             {
                                 ourPetShelter.ShowShelteredOrganicPetsStatus();
                             }
-                            else if (newUserInput == 2)
+                            else if (newUserInput == "2")
                             {
                                 ourPetShelter.ShowShelteredRoboticPetsStatus();
                             }
-                            //else statement
+                            else
+                            {
+                                Console.WriteLine("You did not enter '1' or '2'. Returning to main menu.");
+                            }
                             break;
                         }
                     case "5":
@@ -235,23 +238,14 @@ namespace VirtualPetsAmok
                                         break;
                                     }
                             }
-                            //if (playChoice == "1")
-                            //{
-                            //    newOrganicPet.PlayWithPet();
-                            //    Console.WriteLine($"You have played with {newOrganicPet.Name}! Its status has changed.");
-                            //}
-                            //else if (playChoice == "2")
-                            //{
-                            //    ourPetShelter.PlayWithAllPets();
-                            //    Console.WriteLine("You played with all of your pets! Their statuses have changed.");
-                            //}
-                            //else
-                            //{
-                            //    Console.WriteLine("Returning to main menu.");
-                            //}
                             break;
                         }
                     case "8":
+                        {
+                            ourPetShelter.AdoptPet();
+                            break;
+                        }
+                    case "9":
                         {
                             playing = false;
                             Console.WriteLine("Goodbye!");

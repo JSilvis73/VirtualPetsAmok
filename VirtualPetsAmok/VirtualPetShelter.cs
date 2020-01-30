@@ -101,6 +101,35 @@ namespace VirtualPetsAmok
             allShelteredPets.Add(pet);
             Console.WriteLine($"You successfully added {pet.Name} to the shelter!");
         }
+        public void AdoptPet()
+        {
+            Console.WriteLine("Which pet list do you wish to see?: 1.Organic 2.Robotic");
+            string newUserInput = Console.ReadLine();
+            if (newUserInput == "1")
+            {
+                ShowOrganicShelteredPetsInfo();
+                Console.WriteLine("Select the number pet you wish to adopt.");
+                int selectedPet = Convert.ToInt32(Console.ReadLine());
+                int index = (selectedPet - 1);
+                Console.WriteLine($"You've adopted {shelteredOrganicPets[index].Name}!");
+                shelteredOrganicPets.RemoveAt(index);
+            }
+            else if (newUserInput == "2")
+            {
+                ShowRoboticShelteredPetsInfo();
+                Console.WriteLine("Select the number pet you wish to adopt.");
+                int selectedPet = Convert.ToInt32(Console.ReadLine());
+                int index = (selectedPet - 1);
+                Console.WriteLine($"You've adopted {shelteredRoboticPets[index].Name}!");
+                shelteredRoboticPets.RemoveAt(index);
+            }
+            else
+            {
+                Console.WriteLine("You did not enter '1' or '2'. Returning to main menu.");
+            }
+
+
+        }
     }
     
 }

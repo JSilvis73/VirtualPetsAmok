@@ -12,7 +12,7 @@ namespace VirtualPetsAmok
             RoboticPet newRoboticPet = new RoboticPet();
             VirtualPetShelter ourPetShelter = new VirtualPetShelter();
             bool playing = true;
-            int time = 0;
+            int time = 1;
 
             Console.WriteLine("Welcome to VirtualPets! Let's get started by adding your first pet to the shelter.");
             bool validOption = false;
